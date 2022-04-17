@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/homepage.module.css";
-import st from "../styles/userlogin.module.css";
+import st from "../styles/regdetails.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReactLogo from "../assets/userLogin.svg";
@@ -39,11 +39,13 @@ function Registration() {
       user.pincode &&
       user.city &&
       user.state
-    ) {
+    ) 
+    {
       if (user.password !== user.confirm_password) {
         alert("Password and Confirm Password don't match");
         return;
       }
+
     } else {
       alert("Please fill all the details");
     }
@@ -72,30 +74,36 @@ function Registration() {
             </div>
             <div className={st.box_right}>
               <div className={st.right_upper}>
-                <div className={st.title}>Enter your details</div>
+                <div className={st.title}>Complete Registration</div>
               </div>
               <div className={st.right_lower}>
+                
                 <form
                   onSubmit={userSubmit}
                   className={st.box_form}
                   action="/"
                   method="get"
                 >
+                  <div className={st.detailsBox}>
+                  <div className={st.rightL}>
                   <div>
-                    <label htmlFor="aadhar">Aadhar : </label>
+                    <label className={st.label} htmlFor="aadhar">Aadhar Number: </label>
                     <br />
                     <input
+                      className={st.inputNo}
                       type="text"
                       name="aadhar"
                       id="aadhar"
                       value={user.aadhar}
                       onChange={handleChange}
+                      required
                     />
                   </div>
                   <div>
-                    <label htmlFor="name">Name : </label>
+                    <label className={st.label} htmlFor="name">Name : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="name"
                       id="name"
@@ -104,9 +112,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="password">Password : </label>
+                    <label className={st.label} htmlFor="password">Password : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="password"
                       name="password"
                       id="password"
@@ -115,9 +124,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="confirm_password">Confirm Password :</label>
+                    <label className={st.label} htmlFor="confirm_password">Confirm Password :</label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="password"
                       name="confirm_password"
                       id="confirm_password"
@@ -126,9 +136,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="aadhar">Date of Birth : </label>
+                    <label className={st.label} htmlFor="aadhar">Date of Birth : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="date"
                       name="date_of_birth"
                       id="date_of_birth"
@@ -137,9 +148,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="aadhar">Primary Number : </label>
+                    <label className={st.label} htmlFor="aadhar">Primary Number : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="primary_number"
                       id="primary_number"
@@ -147,10 +159,15 @@ function Registration() {
                       onChange={handleChange}
                     />
                   </div>
+                  </div>
+                  
+                  <div className={st.rightR}>
+                  
                   <div>
-                    <label htmlFor="aadhar">Secondary Number : </label>
+                    <label className={st.label} htmlFor="aadhar">Secondary Number : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="secondary_number"
                       id="secondary_number"
@@ -159,9 +176,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="aadhar">Address Lines : </label>
+                    <label className={st.label} htmlFor="aadhar">Address Lines : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="address_line"
                       id="address_line"
@@ -170,9 +188,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="aadhar">Pincode : </label>
+                    <label className={st.label} htmlFor="aadhar">Pincode : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="pincode"
                       id="pincode"
@@ -181,9 +200,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="aadhar">City : </label>
+                    <label className={st.label} htmlFor="aadhar">City : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="city"
                       id="city"
@@ -192,9 +212,10 @@ function Registration() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="aadhar">State : </label>
+                    <label className={st.label} htmlFor="aadhar">State : </label>
                     <br />
                     <input
+                    className={st.inputNo}
                       type="text"
                       name="state"
                       id="state"
@@ -202,11 +223,16 @@ function Registration() {
                       onChange={handleChange}
                     />
                   </div>
+                  
                   <input
                     class={st.submit}
                     type="submit"
                     value="Register"
                   ></input>
+                  </div>
+                  </div>
+                 
+                  
                 </form>
               </div>
               <div className={st.regOut}></div>

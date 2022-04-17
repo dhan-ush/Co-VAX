@@ -1,0 +1,118 @@
+*{
+    font-family: Roboto,sans-serif;
+}
+.outer{
+    height:88vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(246,246,246);
+}
+
+.box {
+    background-color: white;
+    display: flex;
+    /* justify-content: center; */
+    height:85vh;
+    border: 10px solid white;
+    border-radius: 0.7em;
+    width:70vw;
+}
+
+.box_left{
+    background-color: rgb(1,126,126);
+    border-radius: 0.5em;
+    width: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userLogImg{
+    max-width: 90%;
+    max-height: 100%;
+}
+
+.box_right{
+    margin-left: 1em;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    width:30vw;
+    height: 100%;
+    background-color: white;
+    /* justify-content: space-between; */
+}
+
+.box_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+}
+
+.title{
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+    font-weight: bold;
+    font-size: 2.2em;
+    /* color: rgb(1,126,126); */
+}
+
+.info{
+    color: #949fb2;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    font-size: 1.4em;
+}
+.detailsBox{
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-start;
+}
+.inputNo{
+    border:2px solid red;
+    border-radius: 0.3em;
+    padding: 0.6em 1em;
+    font-size: 1em;
+    margin-bottom: 1.4em;
+    margin-top: 0.5em;
+    width:18vw;
+}
+
+.label{
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    margin-left: 2.3em;
+    /* margin-bottom: 4em; */
+}
+
+.inputNo,.submit{
+    height:5.6vh;
+    margin-left: 2.8em;
+    margin-right: 3em;
+}
+.submit{
+    background-color: rgb(1,126,126);
+    /* padding: 0.6em 2em; */
+    /* font-size: 1em; */
+    /* margin-bottom: 1.4em; */
+    margin-top: 1em;
+    color: white;
+    border:0px;
+    cursor: pointer;
+    border-radius: 0.2em;
+    font-size: 1.6em;
+    width:17vw;
+}
+
+.reg{
+    margin-top: 1.2em;
+    font-size: 1.3em;
+}
+
+.regOut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

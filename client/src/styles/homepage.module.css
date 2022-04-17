@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Roboto";
+}
+
+.navbar{
+    display: flex;
+    background-color: rgb(1,126,126);
+    height:12vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo,.signVac,.signUser{
+    color:white;
+}
+.logo{
+    margin-left: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Roboto,sans-serif!important;
+
+}
+.navRight{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 30em;
+}
+
+
+.userbtn{
+    background-color: transparent;
+    font-family: Roboto,sans-serif!important;
+    border:2px solid white;
+    border-radius: 1.2em;
+    padding:0.7em 1.8em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    
+    
+}
+.signUser{
+    margin-right: 2em;
+    margin-left: 1.5em;
+}
+
+

@@ -5,7 +5,9 @@ import Homepage from "./pages/homepage";
 import Userlogin from "./pages/userLogin";
 import UserReg from "./pages/userReg";
 import Registration from "./pages/registrationDetails";
-import Dashboard from "./pages/dashboard"
+import Dashboard from "./pages/dashboard";
+import Profile from "./components/Profile";
+import DownloadCertificate from "./components/DownloadCerti";
 function App() {
   const [user, setUser] = useState({
     aadhar: "",
@@ -29,7 +31,13 @@ function App() {
           <Route path="/userlogin" element={<Userlogin />} />
           <Route path="/userReg" element={<UserReg user={user} setUser={setUser} />} />
           <Route path="/dash" element={<Dashboard />} />
+<<<<<<< HEAD
           <Route path="/regdetails" element={<Registration user={user} setUser={setUser} />} />
+=======
+          <Route path="/regdetails" element={<Registration />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/certificate" element={<DownloadCertificate />} />
+>>>>>>> 0e28bf34ea9c73a1a46417f9a804515b966643c5
         </Routes>
       </Router>
     </div>

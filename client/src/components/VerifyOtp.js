@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import st from "../styles/userReg.module.css";
 import { Link } from "react-router-dom";
@@ -9,6 +9,8 @@ function VerifyOtp(props){
     let path = `/regDetails`; 
     navigate(path);
   }
+
+  
     const changeNo=props.changeNo;
     const mobile=props.mobile.substr(6);
     const formSubmit= (e) => {

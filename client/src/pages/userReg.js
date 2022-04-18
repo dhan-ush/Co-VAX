@@ -6,13 +6,12 @@ import { useState } from "react";
 import ReactLogo from '../assets/userLogin.svg';
 import EnterMobile from '../components/EnterMobile.js';
 import VerifyOtp from '../components/VerifyOtp.js';
-function UserReg() {
+function UserReg({ user, setUser }) {
     const [comp, setComp] = useState(1);
-    const [mobile, setMobile] = useState("");
     const userSubmit = (e) => {
         e.preventDefault();
         const regexx = /\d{10}/;
-        if (!regexx.test(mobile)) {
+        if (!regexx.test(user.mobile)) {
             alert("Invalid Mobile Number Entered!");
             return;
         }
@@ -20,7 +19,7 @@ function UserReg() {
         setComp(0);
     };
     const StoreNo = (e) => {
-        setMobile(e.target.value);
+        setUser({ ...user, mobile: e.target.value })
     };
     const changeNo = (e) => {
         e.preventDefault();
@@ -48,7 +47,7 @@ function UserReg() {
                             <img className={st.userLogImg} src={ReactLogo} alt="React Logo" />
                         </div>
                         <div className={st.box_right}>
-                            {comp ? <EnterMobile UserSubmit={userSubmit} StoreNo={StoreNo} mobile={mobile} /> : <VerifyOtp mobile={mobile} changeNo={changeNo} />}
+                            {comp ? <EnterMobile UserSubmit={userSubmit} StoreNo={StoreNo} mobile={user.mobile} /> : <VerifyOtp mobile={user.mobile} changeNo={changeNo} />}
                         </div>
                     </div>
                 </div>

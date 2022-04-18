@@ -16,7 +16,7 @@
     height:85vh;
     border: 10px solid white;
     border-radius: 0.7em;
-    width:70vw;
+    width:64vw;
 }
 
 .box_left{
@@ -70,40 +70,39 @@
     /* align-items: center; */
     justify-content: flex-start;
 }
-.inputNo{
-    border:2px solid red;
+.inputNo,.inputNo1{
+    border:2px solid orange;
     border-radius: 0.3em;
-    padding: 0.6em 1em;
     font-size: 1em;
     margin-bottom: 1.4em;
     margin-top: 0.5em;
     width:18vw;
 }
 
-.label{
+.label,.label1{
     font-family: "Roboto", sans-serif;
     font-size: large;
     margin-left: 2.3em;
     /* margin-bottom: 4em; */
 }
 
-.inputNo,.submit{
+.inputNo,.inputNo1,.submit,.inputNo1{
     height:5.6vh;
     margin-left: 2.8em;
-    margin-right: 3em;
+    margin-right: 2.8em;
 }
 .submit{
     background-color: rgb(1,126,126);
     /* padding: 0.6em 2em; */
     /* font-size: 1em; */
     /* margin-bottom: 1.4em; */
-    margin-top: 1em;
+    margin-top: 0.4em;
     color: white;
     border:0px;
     cursor: pointer;
     border-radius: 0.2em;
     font-size: 1.6em;
-    width:17vw;
+    width:18vw;
 }
 
 .reg{
@@ -115,4 +114,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.label1{
+    display: none;
+}
+
+.inputNo1{
+    background-color: rgb(1,126,126);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.6em;
+    position: relative;
+    right: 1.5vw;
+    bottom:0.4vh;
+}
+.inputNo{
+    
+    padding: 0.6em 1em;
 }

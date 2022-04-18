@@ -2,12 +2,36 @@ import React from "react";
 import st from "../styles/userReg.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import FormData from "form-data";
 
 function EnterMobile(props) {
     const UserSubmit = props.UserSubmit;
     const mobile=props.mobile;
     const StoreNo = props.StoreNo;
-    console.log(UserSubmit)
+    // console.log(UserSubmit)
+
+    // const sendOTPMessage = async () => {
+    //     try {
+    //         const data = new FormData();
+    //         data.append('mobile', mobile);
+    //         data.append('sender_id', 'Co-Vax');
+    //         data.append('message', 'Your OTP fro Co-Vax Mobile Verification is : ');
+    //         data.append('expiry', '900');
+    //         const response = await axios({
+    //             method:'POST',
+    //             url: 'http://d7networks.com/api/verifire/send',
+    //             headers: {
+    //                 Authorization: ''
+    //             }
+
+    //         })
+    //     }
+
+    // }
+    // const handleSubmit = () => {
+    //     sendOTPMessage();
+    // }
     return (
         <>
             <div className={st.right_upper}>
@@ -24,7 +48,9 @@ function EnterMobile(props) {
                     <input onChange={StoreNo} class={st.inputNo} type="text" placeholder="Enter your Mobile Number"></input>:
                     <input onChange={StoreNo} class={st.inputNo} type="text" value={mobile}></input>
                     }
-                    <input class={st.submit} type="submit" value="Receive OTP"></input>
+                    <input 
+                    // onClick={handleSubmit()} 
+                    class={st.submit} type="submit" value="Receive OTP"></input>
                 </form>
             </div>
             <div className={st.regOut}>

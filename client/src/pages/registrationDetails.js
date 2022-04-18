@@ -18,7 +18,6 @@ function Registration({ user, setUser }) {
       alert("Password and Confirm Password don't match");
       return;
 
-
     }
     console.log(user);
   };
@@ -28,9 +27,6 @@ function Registration({ user, setUser }) {
         <div className={styles.navbar}>
           <div className={styles.logo}>Co-VAX</div>
           <div className={styles.navRight}>
-            {/* <div className={styles.signVac}>
-                        <Link to="/vacLogin" style={{ textDecoration: "none" }}><button className={styles.userbtn}>Vaccination Center</button></Link>
-                    </div> */}
             <div className={styles.signUser}>
               <Link to="/userLogin" style={{ textDecoration: "none" }}>
                 <button className={styles.userbtn}>Sign In</button>
@@ -211,15 +207,14 @@ function Registration({ user, setUser }) {
                         value="Register"
                       ></input>
                       </div>
-                      {/* <label className={st.label} htmlFor="confirm_password">Confirm Password :</label>
+                      <label className={st.label} htmlFor="confirm_password">Confirm Password :</label>
                       <input
                         class={st.submit}
                         type="submit"
                         value="Register"
-                      ></input> */}
+                      ></input>
                     </div>
                   </div>
-
 
                 </form>
               </div>

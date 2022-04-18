@@ -35,7 +35,9 @@ function VerifyOtp(props){
                             <div className={st.right_lower}>
                                 <form onSubmit={formSubmit} className={st.box_form} action="/" method="get">
                                     <input class={st.inputNo} type="text" placeholder="Enter OTP"></input>
-                                    <input onClick={routeChange} class={st.submit} type="submit" value="Verify OTP"></input>
+                                    <input 
+                                    onClick={routeChange} 
+                                    class={st.submit} type="submit" value="Verify OTP"></input>
                                 </form>
                             </div>
         </>

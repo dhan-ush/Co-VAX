@@ -1,0 +1,43 @@
+.title {
+    font-weight: bolder;
+    font-size: 3.5em;
+    padding: 5vh;
+    margin-bottom: 2vh;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.fieldName {
+    font-weight: bolder;
+    font-size: 3em;
+    margin: 4vh;
+    color: orange;
+}
+
+.content {
+    font-size: 2.5em;
+    font-weight: bold;
+    /* color: orange; */
+}
+
+.outer {
+    height: 90vh;
+    /* background-image: url(../../assets/profilebg.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.inouter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pic {
+    margin-right: 25vw;
+    size: 10em;
+}

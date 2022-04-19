@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Homepage from "./pages/homepage";
 import Userlogin from "./pages/userLogin";
 import UserReg from "./pages/userReg";
@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/" element={<Homepage />} />
           <Route path="/userlogin" element={<Userlogin user={user} setUser={setUser}  />} />
           <Route path="/userReg" element={<UserReg user={user} setUser={setUser} />} />
-          <Route path="/dash" element={<Dashboard />} />
+          <Route path="/dash" element={<Dashboard user = {user} setUser={setUser} />} />
           <Route path="/regDetails" element={<Reg user={user} setUser={setUser} />} />
           
           <Route path="/profile" element={<Profile />} />

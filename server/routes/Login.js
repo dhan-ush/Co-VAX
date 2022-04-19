@@ -15,7 +15,7 @@ db.connect((err) => {
     return;
   }
   console.log("connected as id: " + db.threadId);
-});
+}); 
 
 router.post("/", async (req, res) => {
   const { aadhar, password } = req.body;

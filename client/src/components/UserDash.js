@@ -30,11 +30,6 @@ function UserDash() {
                         </div>
                         <div className={st.logout}>
                             <button onClick={ () => setIssue(3)
-                            }
-                            className={st.linkk}>Download Certificate</button>
-                        </div>
-                        <div className={st.logout}>
-                            <button onClick={ () => setIssue(4)
                             }className={st.linkk}>Raise an Issue</button>
                         </div>
                         <div className={st.logout}>
@@ -46,7 +41,6 @@ function UserDash() {
                         {
                             issue==1?<BookSlot/>:
                             issue==2?<Profile/>:
-                            issue==3?<DownloadCerti/>:
                             <RaiseIssue/>
                         }
             </div>

@@ -1,18 +1,18 @@
 import React from "react";
-import styles from "../styles/userprofile.module.css";
-import st from "../styles/userlogin.module.css";
+import st from "../styles/userprofile.module.css";
 import Logo from "../assets/user.png";
 import { Link } from "react-router-dom";
+import ProfileIcon from"../assets/icon-man.svg";
 
 function Profile() {
-  const userData = {
+  const user = {
     aadhar: 12345678,
-    name: "Naga",
+    name: "Akshat Khaitan",
     password: "naga",
-    confirm_password: "naga",
+    gender:"Male",
     date_of_birth: "20-08-2002",
     primary_number: "12345",
-    secondary_number: "678910",
+    secondary_number: "",
     vaccination_status: 2,
     address_line: "Bits Hyderabad",
     pincode: "500078",
@@ -26,91 +26,72 @@ function Profile() {
   };
   return (
     <>
-      <div className={st.outer}>
-        <div className={st.navbar}>
-          <div className={st.logo}>
-            Co-VAX&nbsp;&nbsp;
-            {/* </div> */}
-            <div className={st.dashlogo}>Dashboard</div>
-          </div>
-          <div className={st.navRight}>
-            <div className={st.logout}>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <button className={st.linkk}>Book Slot</button>
-              </Link>
+        <div className={st.outer}>
+          <div className={st.box}>
+            <div className={st.left}>
+              <div className={st.icon}>
+              <img src={ProfileIcon} className={st.img} alt="Profile Icon"></img>
+              </div>
             </div>
-            <div className={st.logout}>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <button className={st.linkk}>Profile</button>
-              </Link>
-            </div>
-            <div className={st.logout}>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <button className={st.linkk}>Download Certificate</button>
-              </Link>
-            </div>
-            <div className={st.logout}>
-              <button>Raise an Issue</button>
-            </div>
-            <div className={st.logout}>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <button className={st.linkk}>Logout</button>
-              </Link>
+
+            <div className={st.right}>
+              <div className={st.rightTop}>
+              <div className={st.content1}>{user.name}</div>
+              {user.vaccination_status==0?<div></div>:
+              <div className={st.buttondiv} >
+              <button className={st.download}>Download Certificate</button>
+              </div>
+              }
+              </div>
+              <div className={st.rightBottom}>
+              <div className={st.innerLeft}>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Aadhar no</div>
+                  <div className={st.content}>{user.aadhar}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Gender</div>
+                  <div className={st.content}>{user.gender}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Date of Birth</div>
+                  <div className={st.content}>{user.date_of_birth}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Primary Contact</div>
+                  <div className={st.content}>{user.primary_number}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Secondary Contact</div>
+                  <div className={st.content}>{user.secondary_number!=''?user.secondary_number:"N.A."}</div>
+                </div>
+              </div>
+              <div className={st.innerRight}>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Address Line</div>
+                  <div className={st.content}>{user.address_line}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>City</div>
+                  <div className={st.content}>{user.city}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>State</div>
+                  <div className={st.content}>{user.state}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Pincode</div>
+                  <div className={st.content}>{user.pincode}</div>
+                </div>
+                <div className={st.row}>
+                  <div className={st.fieldName}>Vaccination Status</div>
+                  <div className={st.content}>{getStatus(user.vaccination_status)}</div>
+                </div>
+              </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles.outer}>
-        <div className={styles.title}>My Profile</div>
-        <div className={styles.inouter}>
-          <div className={styles.details}>
-            <div className={styles.row}>
-              <div className={styles.fieldName}>Name :</div>{" "}
-              <div className={styles.content}>{userData.name}</div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.fieldName}>Aadhar no :</div>{" "}
-              <div className={styles.content}>{userData.aadhar}</div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.fieldName}>Contact no :</div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.content}>
-                {userData.primary_number}(Primary)
-              </div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.content}>
-                {userData.secondary_number}(Secondary)
-              </div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.fieldName}>Vaccination Status :</div>{" "}
-              <div className={styles.content}>
-                {getStatus(userData.vaccination_status)}
-              </div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.fieldName}>Address:</div> <br />
-            </div>
-            <div className={styles.row}>
-              <div className={styles.content}>{userData.address_line}</div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.content}>{userData.pincode}</div>
-            </div>
-            <div className={styles.row}>
-              <div className={styles.content}>
-                {userData.city}, {userData.state}
-              </div>
-            </div>
-          </div>
-          <div className={st.box_left}>
-            <img className={st.userLogImg} src={Logo} alt="Logo" />
-          </div>
-        </div>
-      </div>
     </>
   );
 }

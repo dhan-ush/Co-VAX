@@ -1,14 +1,11 @@
 FRONTEND
 -register button font/weight
--address lines->address line
--address line field->inheight
--purpose of confirm password-register button in regdetails page?
--signin link on reg page
--gender field
+-signin link on userreg page
 -add logout button
 -adjust position of reg button
 -remove confirm_password from user state and user another variable for that
 -css of loginStatus message
+
 BACKEND
 -add "user already exists" in case aadhar_number is already there in citizen table
 GENERAL

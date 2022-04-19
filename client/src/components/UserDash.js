@@ -8,25 +8,30 @@ import Profile from './Profile';
 import DownloadCerti from './DownloadCerti.js';
 
 function UserDash() {
-    const [issue,setIssue]=useState(1);
+    const [issue,setIssue]=useState(2);
   return (
     <>
     <div className={st.outer}>
         <div className={st.navbar}>
                     <div className={st.logo}>
                         Co-VAX&nbsp;&nbsp;
-                        {/* </div> */}
                     <div className={st.dashlogo}>Dashboard</div>
                     </div>
                     <div className={st.navRight}>
                         <div className={st.logout}>
-                            <Link to="/" style={{ textDecoration: "none" }}><button className={st.linkk}>Book Slot</button></Link>
+                            <button onClick={ () => setIssue(1)
+                            }
+                            className={st.linkk}>Book Slot</button>
                         </div>
                         <div className={st.logout}>
-                            <Link to="/" style={{ textDecoration: "none" }}><button className={st.linkk}>Profile</button></Link>
+                            <button onClick={ () => setIssue(2)
+                            }
+                            className={st.linkk}>Profile</button>
                         </div>
                         <div className={st.logout}>
-                            <Link to="/" style={{ textDecoration: "none" }}><button className={st.linkk}>Download Certificate</button></Link>
+                            <button onClick={ () => setIssue(3)
+                            }
+                            className={st.linkk}>Download Certificate</button>
                         </div>
                         <div className={st.logout}>
                             <button onClick={ () => setIssue(4)
@@ -38,7 +43,12 @@ function UserDash() {
                     </div>
             </div>
             <div className={st.lower}>
-                        {issue==4?<RaiseIssue/>:<BookSlot/>}
+                        {
+                            issue==1?<BookSlot/>:
+                            issue==2?<Profile/>:
+                            issue==3?<DownloadCerti/>:
+                            <RaiseIssue/>
+                        }
             </div>
     </div>
     </>

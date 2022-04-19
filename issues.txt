@@ -7,3 +7,10 @@ FRONTEND
 -gender field
 -add logout button
 -adjust position of reg button
+-remove confirm_password from user state and user another variable for that
+-css of loginStatus message
+BACKEND
+-add "user already exists" in case aadhar_number is already there in citizen table
+GENERAL
+-modify readme.md file
+-use same names for user state keys as that of attributes in citizen table

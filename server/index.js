@@ -9,10 +9,12 @@ app.use(express.json());
 
 //route variables
 const RegisterRouter = require("./routes/Register");
+const LoginRouter = require("./routes/Login");
 //
 
 //routes
 app.use("/register", RegisterRouter);
+app.use("/login", LoginRouter);
 //
 
 app.listen(3001, () => {

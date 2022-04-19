@@ -29,10 +29,10 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
-          <Route path="/userlogin" element={<Userlogin />} />
+          <Route path="/userlogin" element={<Userlogin user={user} setUser={setUser}  />} />
           <Route path="/userReg" element={<UserReg user={user} setUser={setUser} />} />
           <Route path="/dash" element={<Dashboard />} />
-          <Route path="/regDetails" element={<Reg user={user} setUser={setUser}  />} />
+          <Route path="/regDetails" element={<Reg user={user} setUser={setUser} />} />
           
           <Route path="/profile" element={<Profile />} />
           <Route path="/certificate" element={<DownloadCertificate />} />

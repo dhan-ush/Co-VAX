@@ -9,8 +9,7 @@ import ReactLogo from "../assets/userLogin.svg";
 function Registration({ user, setUser }) {
 
   const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    const {name, value} = e.target
     setUser({ ...user, [name]: value });
   };
   const userSubmit = (e) => {

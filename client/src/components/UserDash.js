@@ -29,7 +29,7 @@ function UserDash() {
                             <Link to="/" style={{ textDecoration: "none" }}><button className={st.linkk}>Download Certificate</button></Link>
                         </div>
                         <div className={st.logout}>
-                            <button onClick={ () => setIssue(1)
+                            <button onClick={ () => setIssue(4)
                             }className={st.linkk}>Raise an Issue</button>
                         </div>
                         <div className={st.logout}>
@@ -38,7 +38,7 @@ function UserDash() {
                     </div>
             </div>
             <div className={st.lower}>
-                        {issue?<RaiseIssue/>:<BookSlot/>}
+                        {issue==4?<RaiseIssue/>:<BookSlot/>}
             </div>
     </div>
     </>

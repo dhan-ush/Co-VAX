@@ -13,7 +13,7 @@ function RaiseIssue() {
                 Raise an Issue:
             </div>
             <div className={st.info}>
-            Raise any issue regarding your account with our support team. Our team will conatct you and resolve them at the earliest.
+            Raise any issue regarding your account with our support team. Our team will contact you and resolve them at the earliest.
             </div>
             <div className={st.textbox}>
               <textarea onChange={ (e) => {

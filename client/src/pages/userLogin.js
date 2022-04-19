@@ -1,23 +1,50 @@
 import React from "react";
+import axios from "axios";
 import styles from "../styles/homepage.module.css";
 import st from "../styles/userlogin.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReactLogo from "../assets/userLogin.svg";
 
-function Userlogin() {
+function Userlogin({ user, setUser }) {
   const [credentials, setCredentials] = useState({
     aadhar: "",
     password: "",
   });
+  const [loginStatus, setloginStatus] = useState("");
   const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   };
   const userSubmit = (e) => {
     e.preventDefault();
     console.log(credentials);
+    axios.post("http://localhost:3001/login", credentials).then((response) => {
+      console.log(response);
+      if (response.data.err) {
+        setloginStatus("Unexpected error");
+      } else if (response.data.message) {
+        setloginStatus(response.data.message);
+      } else {
+        setloginStatus(response.data[0].name + ", " + response.data[0].city);
+        setUser({
+          aadhar: response.data[0].aadhar_number,
+          name: response.data[0].name,
+          password: response.data[0].password,
+          confirm_password: "",
+          date_of_birth: response.data[0].date_of_birth,
+          gender: response.data[0].gender,
+          mobile: response.data[0].primary_number,
+          secondary_number: response.data[0].secondary_number,
+          vaccination_status: response.data[0].vaccination_status,
+          address_line: response.data[0].address_line,
+          pincode: response.data[0].pincode,
+          city: response.data[0].city,
+          state: response.data[0].state,
+        });
+        console.log(user);
+      }
+    });
   };
   return (
     <>
@@ -77,6 +104,7 @@ function Userlogin() {
                   ></input>
                 </form>
               </div>
+              <h6>{loginStatus}</h6>
               <div className={st.regOut}>
                 <div className={st.reg}>
                   Not Yet Registered? &nbsp;

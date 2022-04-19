@@ -15,6 +15,7 @@ function App() {
     password: "",
     confirm_password: "",
     date_of_birth: "",
+    gender:"",
     mobile: "",
     secondary_number: "",
     vaccination_status: 0,

@@ -1,0 +1,9 @@
+FRONTEND
+-register button font/weight
+-address lines->address line
+-address line field->inheight
+-purpose of confirm password-register button in regdetails page?
+-signin link on reg page
+-gender field
+-add logout button
+-adjust position of reg button

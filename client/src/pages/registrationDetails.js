@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import styles from "../styles/homepage.module.css";
 import st from "../styles/regdetails.module.css";
 import { Link } from "react-router-dom";
@@ -17,9 +18,10 @@ function Registration({ user, setUser }) {
     if (user.password !== user.confirm_password) {
       alert("Password and Confirm Password don't match");
       return;
-
     }
     console.log(user);
+    axios.post("http://localhost:3001/register",user)
+    .then((response)=>{console.log(response);});
   };
   return (
     <>
@@ -118,6 +120,21 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
+                        <label className={st.label} htmlFor="gender">Gender : </label>
+                        <br />
+                        <input
+                          className={st.inputNo}
+                          type="text"
+                          name="gender"
+                          id="gender"
+                          value={user.gender}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className={st.rightR}>
+                      <div>
                         <label className={st.label} htmlFor="aadhar">Primary Number : </label>
                         <br />
                         <input
@@ -130,10 +147,6 @@ function Registration({ user, setUser }) {
                           disabled
                         />
                       </div>
-                    </div>
-
-                    <div className={st.rightR}>
-
                       <div>
                         <label className={st.label} htmlFor="aadhar">Secondary Number : </label>
                         <br />
@@ -199,7 +212,6 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label1} htmlFor="aadhar">State : </label>
                         <br />
                         <input
                         class={st.inputNo1}
@@ -207,12 +219,6 @@ function Registration({ user, setUser }) {
                         value="Register"
                       ></input>
                       </div>
-                      <label className={st.label} htmlFor="confirm_password">Confirm Password :</label>
-                      <input
-                        class={st.submit}
-                        type="submit"
-                        value="Register"
-                      ></input>
                     </div>
                   </div>
 

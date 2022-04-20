@@ -137,8 +137,7 @@ function Registration({ user, setUser }) {
                         <label className={st.label} htmlFor="aadhar">Primary Number : </label>
                         <br />
                         <input
-                          style={{backgroundColor:'grey'}}
-                          className={st.inputNo}
+                          className={st.disabl}
                           type="text"
                           name="primary_number"
                           id="primary_number"
@@ -223,7 +222,7 @@ function Registration({ user, setUser }) {
 
                 </form>
               </div>
-              <div className={st.regOut}></div>
+              {/* <div className={st.regOut}></div> */}
             </div>
           </div>
         </div>

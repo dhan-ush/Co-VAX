@@ -71,11 +71,11 @@
     justify-content: flex-start;
 }
 .inputNo,.inputNo1{
-    border:2px solid orange;
+    border:2px solid rgb(1,126,126);
     border-radius: 0.3em;
     font-size: 1em;
-    margin-bottom: 1.4em;
-    margin-top: 0.5em;
+    margin-bottom: 1.2em;    
+    margin-top: 0.6em;
     width:18vw;
 }
 
@@ -91,12 +91,16 @@
     margin-left: 2.8em;
     margin-right: 2.8em;
 }
+.label2{
+    border:0px;
+
+}
 .submit{
     background-color: rgb(1,126,126);
     /* padding: 0.6em 2em; */
     /* font-size: 1em; */
     /* margin-bottom: 1.4em; */
-    margin-top: 0.4em;
+    /* margin-top: 0.4em; */
     color: white;
     border:0px;
     cursor: pointer;
@@ -134,4 +138,19 @@
 .inputNo{
     
     padding: 0.6em 1em;
+}
+
+.disabl{
+    height:5.6vh;
+    margin-left: 2.8em;
+    margin-right: 2.8em;
+    padding: 0.6em 1em;
+    border:2px solid rgb(1,126,126);
+    border-radius: 0.3em;
+    font-size: 1em;
+    margin-bottom: 1.2em;    
+    margin-top: 0.6em;
+    width:18vw;
+    /* border: none;    */
+    background-color: #afb6c3;
 }

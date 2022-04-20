@@ -1,43 +1,118 @@
-.title {
-    font-weight: bolder;
-    font-size: 3.5em;
-    padding: 5vh;
-    margin-bottom: 2vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Roboto",sans-serif;
 }
-
-.row {
+.outer{
+    height: 88vh;
+    width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-
-.fieldName {
-    font-weight: bolder;
-    font-size: 3em;
-    margin: 4vh;
-    color: orange;
-}
-
-.content {
-    font-size: 2.5em;
-    font-weight: bold;
-    /* color: orange; */
-}
-
-.outer {
-    height: 90vh;
-    /* background-image: url(../../assets/profilebg.jpg); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.inouter {
+.box{
+    background-color: white;
+    /* width: 55vw; */
+    /* height:70vh; */
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    padding: 5em;
+    padding-top: 3em;
+    padding-left: 2em;
+    border-radius: 1.2em;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    margin-right: 2em;
+}
+.rightBottom{
+    /* margin-top: 0.em; */
+    display: flex;
+}
+.innerLeft{
+    margin-right: 6em;
+    min-width: fit-content;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}
+.img{
+    width: 7vw;
+    height: 10vh;
+    position: relative;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 0;
+    margin-right: 20px;
+}
+.innerLeft,.innerRight{
+    display: flex;
+    flex-direction: column;
+}
+.rightTop{
+    display: flex;
+    margin-bottom: 1.5em;
+    /* margin-bottom: 0.2em; */
+    /* align-items: center; */
 }
 
-.pic {
-    margin-right: 25vw;
-    size: 10em;
+.content1,.content11{
+    font-size: 2.4em;
+    margin-bottom: 0.4em;
+    /* position: relative;
+    right: 1.5em; */
+}
+
+.content11{
+    visibility: hidden;
+}
+
+.fieldName{
+    color: #888f9b;
+    margin-bottom: 0.2em;
+    font-size: 1.2em;
+}
+.innerRight{
+    margin-left: 5vw;
+}
+.row{
+    margin:0.4em 0em;
+}
+
+.content{
+    font-size: 1.5em;
+    color: rgb(1, 126, 126);
+    max-width: 250px;
+}
+
+.buttondiv{
+    margin-left: 2.5vw;
+    
+    position: relative;
+    top: 0.5vh;
+    /* bottom: 5vh; */
+    /* left: 12vw; */
+}
+.download{
+    background-color: rgb(1, 126, 126);
+    font-family: 'Roboto',sans-serif;
+    border:2px solid rgb(1, 126, 126);
+    border-radius: 0.15em;
+    padding:0.3em 0.6em;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    
 }

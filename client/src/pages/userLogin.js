@@ -42,7 +42,7 @@ function Userlogin({ user, setUser }) {
           city: response.data[0].city,
           state: response.data[0].state,
         });
-        localStorage.setItem('user', JSON.stringify(response.data[0]));
+        // localStorage.setItem('user', JSON.stringify(response.data[0]));
         navigate("/dash")
       }
     });

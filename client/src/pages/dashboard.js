@@ -1,12 +1,12 @@
-import React from 'react';
-import UserDash from '../components/UserDash'
+import { React, useEffect } from "react";
+import UserDash from "../components/UserDash";
 
-function Dashboard() {
+function Dashboard({ user, setUser }) {
   return (
     <>
-    <UserDash/>
+      <UserDash user={user} setUser={setUser} />
     </>
-  )
+  );
 }
 
 export default Dashboard;

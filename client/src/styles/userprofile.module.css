@@ -14,11 +14,13 @@
 }
 .box{
     background-color: white;
-    width: 58vw;
-    height:70vh;
+    /* width: 55vw; */
+    /* height:70vh; */
     display: flex;
     align-items: center;
-    padding: 2em;
+    padding: 5em;
+    padding-top: 3em;
+    padding-left: 2em;
     border-radius: 1.2em;
 }
 .left{
@@ -34,6 +36,7 @@
 }
 .innerLeft{
     margin-right: 6em;
+    min-width: fit-content;
 }
 .right{
     display: flex;
@@ -46,6 +49,12 @@
 .img{
     width: 7vw;
     height: 10vh;
+    position: relative;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    top: 0;
+    margin-right: 20px;
 }
 .innerLeft,.innerRight{
     display: flex;
@@ -53,6 +62,7 @@
 }
 .rightTop{
     display: flex;
+    margin-bottom: 1.5em;
     /* margin-bottom: 0.2em; */
     /* align-items: center; */
 }
@@ -72,7 +82,6 @@
     color: #888f9b;
     margin-bottom: 0.2em;
     font-size: 1.2em;
-    
 }
 .innerRight{
     margin-left: 5vw;
@@ -83,7 +92,8 @@
 
 .content{
     font-size: 1.5em;
-    color: rgb(1, 126, 126)
+    color: rgb(1, 126, 126);
+    max-width: 250px;
 }
 
 .buttondiv{

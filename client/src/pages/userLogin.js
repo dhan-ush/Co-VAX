@@ -5,7 +5,7 @@ import st from "../styles/userlogin.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReactLogo from "../assets/userLogin.svg";
-
+import {useNavigate} from 'react-router-dom'
 function Userlogin({ user, setUser }) {
   const [credentials, setCredentials] = useState({
     aadhar: "",
@@ -16,6 +16,7 @@ function Userlogin({ user, setUser }) {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   };
+  const navigate = useNavigate();
   const userSubmit = (e) => {
     e.preventDefault();
     console.log(credentials);
@@ -26,7 +27,6 @@ function Userlogin({ user, setUser }) {
       } else if (response.data.message) {
         setloginStatus(response.data.message);
       } else {
-        setloginStatus(response.data[0].name + ", " + response.data[0].city);
         setUser({
           aadhar: response.data[0].aadhar_number,
           name: response.data[0].name,
@@ -42,7 +42,8 @@ function Userlogin({ user, setUser }) {
           city: response.data[0].city,
           state: response.data[0].state,
         });
-        console.log(user);
+        // localStorage.setItem('user', JSON.stringify(response.data[0]));
+        navigate("/dash")
       }
     });
   };

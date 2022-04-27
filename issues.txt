@@ -5,9 +5,17 @@ FRONTEND
 -adjust position of reg button
 -remove confirm_password from user state and user another variable for that
 -css of loginStatus message
+-dont display/display not available if zero jabs available
 
 BACKEND
 -add "user already exists" in case aadhar_number is already there in citizen table
+-add to vaccination_center same date and 0 jabs unbooked,booked on reg
+
+ROUTES
+-vaccination history route->center_id --- (aadhar, name, mobile number, date)
+-manage booking routes for vaccination center -> center_id --- (aadhar, name, mobile number)
+-modify booking after vaccination is done -> aadhar_id,center_id,dose_number --- update vaccination record  table, citizen vaccination status
+
 GENERAL
 -modify readme.md file
 -use same names for user state keys as that of attributes in citizen table

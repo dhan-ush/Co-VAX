@@ -21,6 +21,7 @@ function BookSlot() {
   });
   const [centres, setCentres] = useState([
   ]);
+  
 
   const dose_1 = {
     vaccine: "COVISHIELD",

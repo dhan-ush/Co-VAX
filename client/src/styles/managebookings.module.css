@@ -125,7 +125,7 @@
 .theading1:nth-child(1){
     width: 8vw;
 }
-.theading1:nth-child(5){
+.theading1:nth-child(7){
     width: 8vw;
 }
 .tableHead{
@@ -160,6 +160,19 @@
     background-color: white;
     border: 0;
     font-size: 1em;
+}
+
+.inputQty{
+    border:1px solid #888f9b;
+    /* border-top: none;
+    border-right: none;
+    border-left: none; */
+    border-radius: 0.3em;
+    padding: 0.4em 1em;
+    font-size: 1em;
+    width: 70%;
+    background-color: transparent;
+    /* margin-bottom: 2em; */
 }
 
 .available:focus{
@@ -213,10 +226,12 @@
     height: 48px;
     width: 48px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .bImgr{
     height:40px;
+    cursor: pointer;
 }
 .cells{
     display: flex;

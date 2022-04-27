@@ -1,76 +1,51 @@
 import React from 'react';
-import st from '../styles/raiseissue.module.css'
 import { Link } from "react-router-dom"
+import ProfileIcon from "../assets/icon-man.svg";
+import OrangeIcon from "../assets/exclamation.png";
+import RedIcon from "../assets/cross.svg";
+import GreenIcon from "../assets/tick.svg";
+import { useState } from 'react';
+import BookingDetails from './bookingDetails';
+import ViewCentres from './ViewCentres';
 
-function BookSlot(user,setUser) {
+function BookSlot() {
+  const [comp, setComp] = useState(1);
+
+  const [user, setUser] = useState({
+    name: "Akshat Khaitan",
+    aadhar: "394891502839",
+    gender: "Male",
+    date_of_birth: "23-09-2002",
+    mobile: "9483902127",
+    vaccination_status: 1.5,
+  });
+  const [centres, setCentres] = useState([
+  ]);
+
+  const dose_1 = {
+    vaccine: "COVISHIELD",
+    centre: "Apollo BGS Hospital",
+    date: "23-09-2021"
+  };
+  const dose_2 = {
+    vaccine: "COVISHIELD",
+    centre: "Columbia Asia Hospital",
+    date: "27-02-2022"
+  };
+  const daysPassed = 70;
+
+  const getStatus = (vaccination_status) => {
+    if (vaccination_status === 0) return "Not Vaccinated";
+    else if (vaccination_status === 1) return "Partially Vaccinated";
+    else return "Fully Vaccinated";
+  };
   return (
     <>
-      <div className={st.outer}>
-          <div className={st.box}>
-            <div className={st.left}>
-              <div className={st.icon}>
-              <img src={ProfileIcon} className={st.img} alt="Profile Icon"></img>
-              </div>
-            </div>
-
-            <div className={st.right}>
-              <div className={st.rightTop}>
-              <div className={st.content1}>{user.name}</div>
-              {user.vaccination_status==0?<div></div>:
-              <div className={st.buttondiv} >
-              <button className={st.download}>Download Certificate</button>
-              </div>
-              }
-              </div>
-              <div className={st.rightBottom}>
-              <div className={st.innerLeft}>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Aadhar no</div>
-                  <div className={st.content}>{user.aadhar}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Gender</div>
-                  <div className={st.content}>{user.gender}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Date of Birth</div>
-                  <div className={st.content}>{user.date_of_birth}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Primary Contact</div>
-                  <div className={st.content}>{user.primary_number}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Secondary Contact</div>
-                  <div className={st.content}>{user.secondary_number!=''?user.secondary_number:"N.A."}</div>
-                </div>
-              </div>
-              <div className={st.innerRight}>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Address Line</div>
-                  <div className={st.content}>{user.address_line}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>City</div>
-                  <div className={st.content}>{user.city}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>State</div>
-                  <div className={st.content}>{user.state}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Pincode</div>
-                  <div className={st.content}>{user.pincode}</div>
-                </div>
-                <div className={st.row}>
-                  <div className={st.fieldName}>Vaccination Status</div>
-                  <div className={st.content}>{getStatus(user.vaccination_status)}</div>
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {comp == 1 ?
+        <BookingDetails user={user} setUser={setUser} dose_1={dose_1} dose_2={dose_2} daysPassed={daysPassed} comp={comp} setComp={setComp} />
+        :
+        <ViewCentres user={user} setUser={setUser} comp={comp} setComp={setComp} />
+      }
     </>
   )
 }

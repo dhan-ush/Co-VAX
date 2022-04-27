@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: "Roboto",sans-serif;
+}
+.outer{
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height:75vh;
+    background-color: white;
+    width: 62vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    border-radius: 0.8em;
+    
+}
+
+.arrow{
+    font-size: 7vh;
+    font-weight: bolder;
+    cursor: pointer;
+    color: rgb(1,126,126);
+    margin-right: 0.3em;
+}
+
+.title{
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 1.3em;
+    height: fit-content;
+}
+.titleC{
+    color: rgb(1,126,126);
+    font-size: 1.3em;
+    position: relative;
+    top: 6px;
+}
+
+.mid div input{
+    height: 2em ;
+}
+.mid{
+    align-self: center;
+    margin-left: 2em;
+    display: flex;
+    /* justify-content: space-between; */
+    border:2px solid rgb(1,126,126);
+    border-radius: 2em;
+    padding: 8px 15px;
+    min-width: fit-content;
+}
+.mid div {
+    margin-right: 2em;
+    display: flex;
+    align-items: center;
+}
+.mid div label {
+    margin-right: 0.5em;
+    font-weight: bold;
+    color: rgb(1,126,126);
+    font-size: 1.5em;
+}
+.submit{
+    background-color: rgb(1,126,126);
+    color: white;
+    border:0px;
+    cursor: pointer;
+    border-radius: 2em;
+    font-size: 1.2em;
+    padding: 0.4em 1.2em;
+    min-width: fit-content;
+
+}
+
+.enabled {
+    background-color: rgb(1,126,126);
+    color: white;
+    border:0px;
+    cursor: pointer;
+    border-radius: 2em;
+    font-size: 1.2em;
+    padding: 0.4em 1.2em;
+    min-width: fit-content;
+}
+.disabled {
+    color: white;
+    border:0px;
+    cursor: pointer;
+    border-radius: 2em;
+    font-size: 1.2em;
+    padding: 0.4em 1.2em;
+    min-width: fit-content;
+    background-color: grey;
+}
+
+.tableDiv{
+    margin: 2em 4em;
+    overflow-y: scroll;
+    
+}
+.theading{
+    border: none;
+    margin: none;
+    width: 10vw;
+}
+
+.theading:nth-child(1){
+    width: 18vw;
+}
+.tableHead{
+    background-color: rgb(189, 189, 189);
+    height: 10vh;
+    padding: none;
+}
+.trow{
+    height:8vh;
+}
+
+.cname{
+    color: rgb(1,126,126);
+    font-size: 1em;
+    font-weight: bold;
+
+}
+.caddress{
+    color:#888f9b;
+
+}
+
+.available {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color:  rgb(58, 177, 25);
+    cursor: pointer;
+    height: 8vh;
+    background-color: white;
+    border: 0;
+    font-size: 1em;
+}
+
+.available:focus{
+    background-color: rgb(1,126,126);
+    color: white;
+}
+
+.na {
+    color: red;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom{
+    align-self: flex-end;
+    margin: 2vh;
+    margin-bottom: 4vh;
+    margin-right: 3vw;
+}
+
+.box1 {
+    height: 32vh;
+    background-color: white;
+    width: 62vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    border-radius: 0.8em;
+}
+
+.mid div select {
+    height: 6vh;
+    width: 10vw;
+}

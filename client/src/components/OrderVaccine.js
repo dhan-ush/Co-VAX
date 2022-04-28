@@ -110,8 +110,9 @@ function OrderVaccine() {
                                                 <input
                                                     className={st.inputQty}
                                                     type="date"
-                                                    name="date_of_birth"
-                                                    id="date_of_birth"
+                                                    name="date"
+                                                    id="date"
+                                                    placeholder="0"
                                                     onChange={(e) => { setOrder({ ...order, date: e.target.value }) }}
                                                 />
                                             </div>

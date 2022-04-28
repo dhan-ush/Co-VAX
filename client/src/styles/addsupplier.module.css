@@ -2,7 +2,7 @@
     font-family: Roboto,sans-serif;
 }
 .outer{
-    height:88vh;
+    height:85vh;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -13,15 +13,20 @@
     background-color: white;
     display: flex;
     /* justify-content: center; */
-    height:85vh;
+    height:75vh;
     border: 10px solid white;
     border-radius: 0.7em;
-    width:64vw;
+    width:58vw;
+    margin-left: 2em;
+}
+.title a{
+    cursor: pointer;
 }
 
 .box_left{
     background-color: rgb(1,126,126);
     border-radius: 0.5em;
+    margin-left: 2em;
     width: 15vw;
     display: flex;
     align-items: center;
@@ -34,7 +39,8 @@
 }
 
 .box_right{
-    margin-left: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;
@@ -52,8 +58,8 @@
 }
 
 .title{
-    margin-top: 0.2em;
-    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+    margin-bottom: 0.8em;
     font-weight: bold;
     font-size: 2.2em;
     /* color: rgb(1,126,126); */
@@ -133,7 +139,7 @@
     font-size: 1.6em;
     position: relative;
     right: 1.5vw;
-    bottom:0.4vh;
+    bottom:1vh;
 }
 .inputNo{
     
@@ -158,4 +164,9 @@
 .right_upper{
     display: flex;
     align-items: center;
+}
+
+.rightL{
+    margin-right: 2em;
+    margin-left: 1em;
 }

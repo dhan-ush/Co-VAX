@@ -7,7 +7,7 @@ import BookSlot from "./BookSlot";
 import Profile from "./Profile";
 
 function UserDash({user, setUser}) {
-  const [issue, setIssue] = useState(2);
+  const [issue, setIssue] = useState(1);
   const logout = ()=>{
     // setUser({});
     // localStorage.clear();

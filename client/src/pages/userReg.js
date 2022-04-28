@@ -35,8 +35,8 @@ function UserReg({ user, setUser }) {
                         <Link to="/vacLogin" style={{ textDecoration: "none" }}><button className={styles.userbtn}>Vaccination Center</button></Link>
                     </div> */}
             <div className={styles.signUser}>
-              <Link to="/userLogin" style={{ textDecoration: "none" }}>
-                <button className={styles.userbtn}>Register / Sign In</button>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <button className={styles.userbtn}>Back To Homepage</button>
               </Link>
             </div>
           </div>

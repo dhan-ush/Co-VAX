@@ -1,8 +1,7 @@
 FRONTEND
--register button font/weight
+-register button font/weight, placement
+-OTP
 -signin link on userreg page
--add logout button
--adjust position of reg button
 -remove confirm_password from user state and user another variable for that
 -css of loginStatus message
 -dont display/display not available if zero jabs available
@@ -12,10 +11,32 @@ BACKEND
 -add to vaccination_center same date and 0 jabs unbooked,booked on reg
 
 ROUTES
--vaccination history route->center_id --- (aadhar, name, mobile number, date)
--manage booking routes for vaccination center -> center_id --- (aadhar, name, mobile number)
--modify booking after vaccination is done -> aadhar_id,center_id,dose_number --- update vaccination record  table, citizen vaccination status
+-vaccination center login
+-vaccination center register/admin addition(tbd)
 
 GENERAL
 -modify readme.md file
 -use same names for user state keys as that of attributes in citizen table
+
+
+order_vaccine 
+- GET and POST routes
+manage_bookings
+-GET bookings data
+-POST tick and POST cancel booking routes
+past_bookings
+-past_booking data to be fetched on useEffect call
+
+
+book_slot
+- GET vaccine_center details on the basis of pincode and vaccine names
+- POST request of the user booking a vaccination center, update the user vaccination status accordingly
+
+
+-vaccination_status->0,1,2,3,4
+-NULL values hua toh ded
+
+
+optional
+-change boooked center
+

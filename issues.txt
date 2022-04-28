@@ -5,6 +5,7 @@ FRONTEND
 -remove confirm_password from user state and user another variable for that
 -css of loginStatus message
 -dont display/display not available if zero jabs available
+-remove centers back button
 
 BACKEND
 -add "user already exists" in case aadhar_number is already there in citizen table

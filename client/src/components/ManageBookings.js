@@ -12,22 +12,26 @@ function ManageBookings() {
             {
                 uid: "123456789012",
                 name: "Akshat Khaitan",
-                number: "5647893210"
+                number: "5647893210",
+                vaccination_status: 0
             },
             {
                 uid: "123456789412",
                 name: "Nagadhanush KV",
-                number: "5647893210"
+                number: "5647893210",
+                vaccination_status: 1
             },
             {
                 uid: "123456712342",
                 name: "Ankit Yadav",
-                number: "5647893210"
+                number: "5647893210",
+                vaccination_status: 1
             },
             {
                 uid: "123456758962",
                 name: "Rishi Poddar",
-                number: "5647893210"
+                number: "5647893210",
+                vaccination_status: 0
             }
         ]
     })
@@ -61,64 +65,68 @@ function ManageBookings() {
     }
     return (
         <>
-            <div className={st.info}>
-                <div>
-                    <span>Center Name: </span> <div className={st.data}> {data.center_name}</div>
-                </div>
-                <div>
-                    <span>Id:</span> <div className={st.data}> {data.center_id} </div>
-                </div>
-                <div>
-                    <span>Total Number Of Bookings Today: </span> <div className={st.data}>
-                        {data.bookings.length}
+        <div className={st.out}>
+                <div className={st.info}>
+                    <div>
+                        <span>Center Name: </span> <div className={st.data}> {data.center_name}</div>
+                    </div>
+                    <div>
+                        <span>Id:</span> <div className={st.data}> {data.center_id} </div>
+                    </div>
+                    <div>
+                        <span>Total Number Of Bookings Today: </span> <div className={st.data}>
+                            {data.bookings.length}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <div className={st.tableDiv}>
-                    {data.bookings.length == 0 ? <div>No Bookings Available</div> :
-                        <table>
+                <div>
+                    <div className={st.tableDiv}>
+                        {data.bookings.length == 0 ? <div>No Bookings Available</div> :
+                            <table>
 
-                            <thead className={st.tableHead}>
-                                <th className={st.theading}>Sl No.</th>
-                                <th className={st.theading}>Identification Number</th>
-                                <th className={st.theading}>Name</th>
-                                <th className={st.theading}>Mobile Number</th>
-                                <th className={st.theading}>Manage</th>
-                            </thead>
-                            <tbody>
-                                {data.bookings.map((w, index) => {
-                                    return (
-                                        <tr className={st.trow}>
+                                <thead className={st.tableHead}>
+                                    <th className={st.theading}>Sl No.</th>
+                                    <th className={st.theading}>Identification Number</th>
+                                    <th className={st.theading}>Name</th>
+                                    <th className={st.theading}>Mobile Number</th>
+                                    <th className={st.theading}>Dose No.</th>
+                                    <th className={st.theading}>Manage</th>
+                                </thead>
+                                <tbody>
+                                    {data.bookings.map((w, index) => {
+                                        return (
+                                            <tr className={st.trow}>
 
 
-                                            <td className={st.tcell1}>
-                                                <div className={st.cells}>{index + 1}</div>
-                                            </td>
-                                            <td className={st.tcell}>
-                                                <div className={st.cells}>{w.uid}</div>
-                                            </td>
+                                                <td className={st.tcell1}>
+                                                    <div className={st.cells}>{index + 1}</div>
+                                                </td>
+                                                <td className={st.tcell}>
+                                                    <div className={st.cells}>{w.uid}</div>
+                                                </td>
 
-                                            <td className={st.tcell}><div className={st.cells}>{w.name}</div></td>
-                                            <td className={st.tcell}><div className={st.cells}>{w.number}</div></td>
-                                            <td className={st.tcell}>
-                                                <div className={st.manageB}>
-                                                    <div className={st.icon}>
-                                                        <img className={st.bImg} src={GreenIcon} alt="React Logo" onClick={() => handleTick(index)} />
+                                                <td className={st.tcell}><div className={st.cells}>{w.name}</div></td>
+                                                <td className={st.tcell}><div className={st.cells}>{w.number}</div></td>
+                                                <td className={st.tcell}><div className={st.cells}>{w.vaccination_status == 0 ? 1 : 2}</div></td>
+                                                <td className={st.tcell}>
+                                                    <div className={st.manageB}>
+                                                        <div className={st.icon}>
+                                                            <img className={st.bImg} src={GreenIcon} alt="React Logo" onClick={() => handleTick(index)} />
+                                                        </div>
+                                                        <div className={st.icon}>
+                                                            <img className={st.bImgr} src={RedIcon} alt="React Logo" onClick={() => handleCross(index)} />
+                                                        </div>
                                                     </div>
-                                                    <div className={st.icon}>
-                                                        <img className={st.bImgr} src={RedIcon} alt="React Logo" onClick={() => handleCross(index)} />
-                                                    </div>
-                                                </div>
-                                            </td>
+                                                </td>
 
-                                        </tr>);
-                                })}
-                            </tbody>
-                        </table>}
+                                            </tr>);
+                                    })}
+                                </tbody>
+                            </table>}
 
+                    </div>
                 </div>
-            </div>
+                </div>
         </>
     )
 }

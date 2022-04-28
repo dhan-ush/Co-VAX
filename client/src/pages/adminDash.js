@@ -2,7 +2,8 @@ import React from "react";
 import st from "../styles/admindash.module.css";
 import { Link } from "react-router-dom";
 import { useState , useEffect } from "react";
-import AddCenter from "../components/addCenter";
+import ManageCenter from "../components/manageCenter";
+import ManageSupplier from "../components/manageSupplier";
 
 function UserDash({user, setUser}) {
   const [comp, setComp] = useState(1);
@@ -40,7 +41,8 @@ function UserDash({user, setUser}) {
             </div>
             <div className={st.lower}>
                         {
-                            comp==1?<AddCenter/>:
+                            comp==1?<ManageCenter/>:
+                            comp==2?<ManageSupplier/>:
                             <></>
                             // issue==2?<Profile user={user} setUser={setUser}/>:
                             // <RaiseIssue/>

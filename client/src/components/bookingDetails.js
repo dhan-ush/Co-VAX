@@ -260,7 +260,6 @@ function bookingDetails(props) {
                                                         <div className={st.cautionG}>
                                                             You have Successfully Completed Slot Booking for Dose 2
                                                         </div>
-                                                        7
                                                     </div>
                                                 </>
 

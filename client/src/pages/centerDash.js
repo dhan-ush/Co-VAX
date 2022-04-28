@@ -9,7 +9,7 @@ import OrderVaccine from '../components/OrderVaccine';
 function CenterDash(props) {
     const center=props.center;
     const setCenter=props.setCenter;
-    const [nav,setNav]= useState(2);
+    const [nav,setNav]= useState(1);
     return (
         <>
             <div className={st.outer}>

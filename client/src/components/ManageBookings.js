@@ -4,7 +4,6 @@ import GreenIcon from "../assets/greentick.png";
 import RedIcon from "../assets/cross.png";
 import axios from "axios";
 
-<<<<<<< HEAD
 function ManageBookings(props) {
   const [dose,setDose]=useState(1);
   let index = 0;

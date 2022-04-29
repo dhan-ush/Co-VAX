@@ -30,12 +30,17 @@ function App() {
     state: "",
   });
   const [center, setCenter] = useState({
-    center_id: "",
-    password: "",
+    center_id: -1,
+    date: "",
+    name:"",
     address_line: "",
-    pincode: "",
     city: "",
     state: "",
+    pincode: "",
+    password:"",
+    jabs_unbooked:"",
+    jabs_booked:"",
+    vaccine_name: "",
   });
 
   const [admin,setAdmin]=useState({

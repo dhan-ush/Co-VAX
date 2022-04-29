@@ -8,29 +8,37 @@ import ReactLogo from "../assets/userLogin.svg";
 
 function Registration({ user, setUser }) {
 
+  const [confirm_password,setConfirm_password]=useState('');
   const handleChange = (e) => {
-    const {name, value} = e.target
+    const { name, value } = e.target
     setUser({ ...user, [name]: value });
   };
+  const handleChange1 = (e) => {
+    setConfirm_password(e.target.value);
+  }
   const userSubmit = (e) => {
     e.preventDefault();
-    if (user.password !== user.confirm_password) {
+    if (user.password !== confirm_password) {
       alert("Password and Confirm Password don't match");
       return;
     }
     console.log(user);
-    axios.post("http://localhost:3001/register",user)
-    .then((response)=>{console.log(response);});
+    axios.post("http://localhost:3001/register", user)
+      .then((response) => { console.log(response); });
   };
   return (
     <>
       <div className={styles.outer}>
         <div className={styles.navbar}>
-          <div className={styles.logo}>Co-VAX</div>
+          <div className={styles.logo}>
+          <Link to="/" >
+                            <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
+                          </Link>
+          </div>
           <div className={styles.navRight}>
             <div className={styles.signUser}>
-              <Link to="/userLogin" style={{ textDecoration: "none" }}>
-                <button className={styles.userbtn}>Sign In</button>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <button className={styles.userbtn}>Back To Homepage</button>
               </Link>
             </div>
           </div>
@@ -42,7 +50,7 @@ function Registration({ user, setUser }) {
             </div>
             <div className={st.box_right}>
               <div className={st.right_upper}>
-                <div className={st.title}>Complete Registration</div>
+                <div className={st.title}>User Registration</div>
               </div>
               <div className={st.right_lower}>
 
@@ -101,11 +109,14 @@ function Registration({ user, setUser }) {
                           type="password"
                           name="confirm_password"
                           id="confirm_password"
-                          value={user.confirm_password}
-                          onChange={handleChange}
+                          value={confirm_password}
+                          onChange={handleChange1}
                           required
                         />
                       </div>
+
+                    </div>
+                    <div className={st.rightM}>
                       <div>
                         <label className={st.label} htmlFor="aadhar">Date of Birth : </label>
                         <br />
@@ -130,19 +141,17 @@ function Registration({ user, setUser }) {
                           onChange={handleChange}
                         />
                       </div>
-                    </div>
 
-                    <div className={st.rightR}>
                       <div>
                         <label className={st.label} htmlFor="aadhar">Primary Number : </label>
                         <br />
                         <input
-                          className={st.disabl}
+                          className={st.inputNo}
                           type="text"
                           name="primary_number"
                           id="primary_number"
-                          value={user.mobile}
-                          disabled
+                          value={user.primary_number}
+                          onChange={handleChange}
                         />
                       </div>
                       <div>
@@ -157,6 +166,27 @@ function Registration({ user, setUser }) {
                           onChange={handleChange}
                         />
                       </div>
+                      {/* <div className={st.regOut}> */}
+                        
+                      {/* </div> */}
+                      <div className={st.newRow}>
+                        <br />
+                        <input
+                          class={st.inputNo1}
+                          type="submit"
+                          value="Register"
+                        ></input>
+                        <div className={st.reg}>
+                          Already Registered? &nbsp;
+                          <Link to="/userLogin" style={{ textDecoration: "none" }}>
+                            <a href="#">Sign In </a>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={st.rightR}>
+
                       <div>
                         <label className={st.label} htmlFor="aadhar">Address Lines : </label>
                         <br />
@@ -209,14 +239,7 @@ function Registration({ user, setUser }) {
                           required
                         />
                       </div>
-                      <div>
-                        <br />
-                        <input
-                        class={st.inputNo1}
-                        type="submit"
-                        value="Register"
-                      ></input>
-                      </div>
+                      
                     </div>
                   </div>
 

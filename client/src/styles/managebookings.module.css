@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* padding: 1em 2em; */
 }
 .box{
     height:75vh;
@@ -27,10 +28,11 @@
     /* justify-content: space-between; */
     align-items: flex-start;
     border-radius: 0.8em;
+    padding: 1em 2em;
     
 }
 
-.arrow{
+.arrow,.arrow1{
     font-size: 7vh;
     font-weight: bolder;
     cursor: pointer;
@@ -38,7 +40,12 @@
     margin-right: 0.3em;
 }
 
-.title{
+.arrow1{
+    position: relative;
+    bottom: 1vh;
+}
+
+.title,.title1{
     display: flex;
     align-self: flex-start;
     align-items: center;
@@ -46,7 +53,22 @@
     margin-top: 1.5em;
     margin-bottom: 1.3em;
     height: fit-content;
+    
 }
+
+.title1{
+    color: rgb(1,126,126);
+    font-size: 1.2em;
+    font-weight: bolder;
+    /* margin: none; */
+    /* margin-bottom: 2em; */
+    position: relative;
+    /* right: 7vw; */
+    bottom: 2vh;
+    display: flex;
+    align-items: center;
+}
+
 .titleC{
     color: rgb(1,126,126);
     font-size: 1.3em;
@@ -140,6 +162,7 @@
     background-color: rgb(189, 189, 189);
     height: 10vh;
     padding: none;
+    /* border-radius: 1em; */
 }
 .trow{
     height:8vh;

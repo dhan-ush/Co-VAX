@@ -16,35 +16,32 @@ function UserDash({ user, setUser }) {
     <>
       <div className={st.outer}>
         <div className={st.navbar}>
-          <div className={st.logo}>
-            Co-VAX&nbsp;&nbsp;
-            <div className={st.dashlogo}>Dashboard</div>
-          </div>
-          <div className={st.navRight}>
-            <div className={st.logout}>
-              <button onClick={() => setIssue(1)} className={st.linkk}>
-                Book Slot
-              </button>
+                    <div className={st.logo}>
+                    <Link to="/" >
+                            <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
+                          </Link>&nbsp;&nbsp;
+                    <div className={st.dashlogo}>Dashboard</div>
+                    </div>
+                    <div className={st.navRight}>
+                        <div className={st.logout}>
+                            <button onClick={ () => setIssue(1)
+                            }
+                            className={st.linkk}>Book Slot</button>
+                        </div>
+                        <div className={st.logout}>
+                            <button onClick={ () => setIssue(2)
+                            }
+                            className={st.linkk}>Profile</button>
+                        </div>
+                        <div className={st.logout}>
+                            <button onClick={ () => setIssue(3)
+                            }className={st.linkk}>Raise an Issue</button>
+                        </div>
+                        <div className={st.logout}>
+                            <Link to="/" style={{ textDecoration: "none" }}><button onClick={logout} className={st.linkk}>Logout</button></Link>
+                        </div>
+                    </div>
             </div>
-            <div className={st.logout}>
-              <button onClick={() => setIssue(2)} className={st.linkk}>
-                Profile
-              </button>
-            </div>
-            <div className={st.logout}>
-              <button onClick={() => setIssue(3)} className={st.linkk}>
-                Raise an Issue
-              </button>
-            </div>
-            <div className={st.logout}>
-              <Link to="/" style={{ textDecoration: "none" }}>
-                <button onClick={logout} className={st.linkk}>
-                  Logout
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
         <div className={st.lower}>
           {issue == 1 ? (
             <BookSlot user={user} setUser={setUser} />

@@ -13,10 +13,10 @@
     background-color: white;
     display: flex;
     /* justify-content: center; */
-    height:85vh;
+    height:75vh;
     border: 10px solid white;
     border-radius: 0.7em;
-    width:64vw;
+    width:88vw;
 }
 
 .box_left{
@@ -54,6 +54,7 @@
 .title{
     margin-top: 0.2em;
     margin-bottom: 0.4em;
+    margin-left: 0.5em;
     font-weight: bold;
     font-size: 2.2em;
     /* color: rgb(1,126,126); */
@@ -133,7 +134,23 @@
     font-size: 1.6em;
     position: relative;
     right: 1.5vw;
-    bottom:0.4vh;
+    bottom:2.5vh;
+}
+.rightR{
+    position: relative;
+    right: 5vw;
+}
+.newRow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reg{
+    position: relative;
+    bottom: 8vh;
+    right: 1.2vw;
+    font-size: 1.4em;
+
 }
 .inputNo{
     

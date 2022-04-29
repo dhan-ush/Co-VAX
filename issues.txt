@@ -1,8 +1,4 @@
 FRONTEND
--register button font/weight, placement
--OTP ND
--signin link on userreg page
--remove confirm_password from user state and user another variable for that
 -css of loginStatus message
 -dont display/display not available if zero jabs available ND
 -remove centers back button

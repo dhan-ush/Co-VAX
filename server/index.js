@@ -18,6 +18,7 @@ const VaccinationHistory = require("./routes/VaccinationHistory");
 const DisplayManageBookings = require("./routes/DisplayManageBookings")
 const VaccinationDetails = require("./routes/VaccinationDetails")
 const AddCenter = require("./routes/AddCenter")
+const CenterLogin = require("./routes/CenterLogin")
 //
 
 //routes
@@ -31,6 +32,7 @@ app.use("/VaccinationHistory", VaccinationHistory);
 app.use("/DisplayManageBookings", DisplayManageBookings);
 app.use("/VaccinationDetails", VaccinationDetails);
 app.use("/AddCenter", AddCenter);
+app.use("/CenterLogin", CenterLogin);
 //
 
 app.listen(3001, () => {

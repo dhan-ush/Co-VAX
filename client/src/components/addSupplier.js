@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import st from '../styles/addcenter.module.css'
+import st from '../styles/addsupplier.module.css'
 
 function AddSupplier(props) {
     const comp = props.comp;
@@ -63,7 +63,11 @@ function AddSupplier(props) {
                                                 required
                                             />
                                         </div>
-                                        <div>
+                                    </div>
+
+                                    <div className={st.rightR}>
+                                        
+                                    <div>
                                             <label className={st.label} htmlFor="name"> Supplier Name : </label>
                                             <br />
                                             <input
@@ -72,22 +76,6 @@ function AddSupplier(props) {
                                                 name="name"
                                                 id="name"
                                                 value={supplier.name}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className={st.rightR}>
-                                        <div>
-                                            <label className={st.label} htmlFor="aadhar">Address Lines : </label>
-                                            <br />
-                                            <input
-                                                className={st.inputNo}
-                                                type="text"
-                                                name="address_line"
-                                                id="address_line"
-                                                value={supplier.address_line}
                                                 onChange={handleChange}
                                                 required
                                             />

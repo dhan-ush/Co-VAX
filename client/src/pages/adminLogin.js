@@ -5,7 +5,7 @@ import st from "../styles/userlogin.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReactLogo from "../assets/admin.svg";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 function Userlogin({ admin, setAdmin }) {
   const [credentials, setCredentials] = useState({
     aadhar: "",
@@ -27,7 +27,7 @@ function Userlogin({ admin, setAdmin }) {
       } else if (response.data.message) {
         setloginStatus(response.data.message);
       } else {
-          
+
         navigate("/adminDash")
       }
     });
@@ -36,7 +36,11 @@ function Userlogin({ admin, setAdmin }) {
     <>
       <div className={styles.outer}>
         <div className={styles.navbar}>
-          <div className={styles.logo}>Co-VAX</div>
+          <div className={styles.logo}>
+            <Link to="/" >
+              <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
+            </Link>
+          </div>
           <div className={styles.navRight}>
             {/* <div className={styles.signVac}>
                         <Link to="/vacLogin" style={{ textDecoration: "none" }}><button className={styles.userbtn}>Vaccination Center</button></Link>

@@ -53,14 +53,7 @@ function EnterMobile(props) {
                     class={st.submit} type="submit" value="Receive OTP"></input>
                 </form>
             </div>
-            <div className={st.regOut}>
-                <div className={st.reg}>
-                    Already Registered? &nbsp;
-                    <Link to="/userReg" style={{ textDecoration: "none" }}>
-                        <a href="#">Sign In </a>
-                    </Link>
-                </div>
-            </div>
+            
         </>
     );
 }

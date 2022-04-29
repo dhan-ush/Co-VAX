@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const app=express();
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -12,13 +12,14 @@ const RegisterRouter = require("./routes/Register");
 const LoginRouter = require("./routes/Login");
 const ShowVaccinationCenters = require("./routes/ShowVaccinationCenters");
 const BookSlot = require("./routes/BookSlot");
-const SupplierList = require("./routes/SupplierList")
+const SupplierList = require("./routes/SupplierList");
 const Order = require("./routes/Order");
 const VaccinationHistory = require("./routes/VaccinationHistory");
-const DisplayManageBookings = require("./routes/DisplayManageBookings")
-const VaccinationDetails = require("./routes/VaccinationDetails")
-const AddCenter = require("./routes/AddCenter")
-const CenterLogin = require("./routes/CenterLogin")
+const DisplayManageBookings = require("./routes/DisplayManageBookings");
+const VaccinationDetails = require("./routes/VaccinationDetails");
+const AddCenter = require("./routes/AddCenter");
+const CenterLogin = require("./routes/CenterLogin");
+const RemoveCenter = require("./routes/RemoveCenter");
 //
 
 //routes
@@ -33,6 +34,7 @@ app.use("/DisplayManageBookings", DisplayManageBookings);
 app.use("/VaccinationDetails", VaccinationDetails);
 app.use("/AddCenter", AddCenter);
 app.use("/CenterLogin", CenterLogin);
+app.use("/RemoveCenter", RemoveCenter);
 //
 
 app.listen(3001, () => {

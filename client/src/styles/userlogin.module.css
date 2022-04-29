@@ -26,6 +26,13 @@
     justify-content: center;
 }
 
+.loginStatus{
+    color: red;
+    font-size: 1.1em;
+    /* position: relative; */
+    /* top: 2vh; */
+    font-weight: 100;
+}
 .userLogImg{
     max-width: 90%;
     max-height: 100%;
@@ -83,7 +90,7 @@
 }
 
 .reg{
-    margin-top: 1.2em;
+    margin-top: 0.8em;
     font-size: 1.3em;
 }
 

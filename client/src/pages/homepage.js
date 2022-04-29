@@ -10,7 +10,9 @@ function Homepage() {
             <div className={styles.outer}>
                 <div className={styles.navbar}>
                     <div className={styles.logo}>
-                        Co-VAX
+                        <Link to="/" >
+                            <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
+                          </Link>
                     </div>
                     <div className={styles.navRight}>
                         <div className={styles.signVac}>

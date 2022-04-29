@@ -47,7 +47,7 @@ router.use("/", async (req, res) => {
     (err, result) => {
       if (err) {
         db.query(
-          "INSERT INTO vaccination_center SELECT MAX(center_id)+1,?,?,?,?,?,?,?,0,0,? from vaccination_center",
+          "INSERT INTO vaccination_center values (1,?,?,?,?,?,?,?,0,0,?)",
           [
             date,
             name,

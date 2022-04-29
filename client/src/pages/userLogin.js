@@ -51,7 +51,11 @@ function Userlogin({ user, setUser }) {
     <>
       <div className={styles.outer}>
         <div className={styles.navbar}>
-          <div className={styles.logo}>Co-VAX</div>
+          <div className={styles.logo}>
+          <Link to="/" >
+                            <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
+                          </Link>
+          </div>
           <div className={styles.navRight}>
             {/* <div className={styles.signVac}>
                         <Link to="/vacLogin" style={{ textDecoration: "none" }}><button className={styles.userbtn}>Vaccination Center</button></Link>
@@ -105,11 +109,11 @@ function Userlogin({ user, setUser }) {
                   ></input>
                 </form>
               </div>
-              <h6>{loginStatus}</h6>
+              <h6 className={st.loginStatus}>{loginStatus}</h6>
               <div className={st.regOut}>
                 <div className={st.reg}>
                   Not Yet Registered? &nbsp;
-                  <Link to="/userReg" style={{ textDecoration: "none" }}>
+                  <Link to="/regDetails" style={{ textDecoration: "none" }}>
                     <a href="#">Click Here </a>
                   </Link>
                 </div>

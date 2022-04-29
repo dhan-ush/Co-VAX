@@ -5,7 +5,7 @@ import AddCenter from './addCenter';
 import RemoveCenter from './removeCenter';
 
 function ManageCenter() {
-    const centers = [
+    const [centers,setCentres] = useState([
         {
             cid: 101,
             name: "Apollo BGS Hospital",
@@ -21,7 +21,7 @@ function ManageCenter() {
             name: "Apollo BGS Hospital",
             address: "Paradise Street, Global Road, Hyderabad"
         },
-    ];
+    ]);
     const [comp, setComp] = useState(0);
 
     return (
@@ -29,6 +29,9 @@ function ManageCenter() {
             <div className={st.outer}>
                 {comp == 0 ?
                     <>
+                        <div className={st.a}>
+
+                        </div>
                         <div className={st.box}>
                             <div className={st.box_left}>
                                 <button onClick={() => setComp(1)}

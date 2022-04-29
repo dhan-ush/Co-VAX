@@ -2,6 +2,7 @@ import React from 'react'
 import st from "../styles/managecenter.module.css"
 import { useState } from 'react';
 import AddSupplier from './addSupplier'
+import RemoveSupplier from './removeSupplier';
 
 function ManageSupplier() {
     const suppliers = [
@@ -36,15 +37,17 @@ function ManageSupplier() {
                         className={st.submit}>Add Supplier</button>
                     </div>
                     <div className={st.box_right}>
-                    <button onClick={()=>setComp(1)}
+                    <button onClick={()=>setComp(2)}
                     className={st.submit}>Remove Supplier</button>
                         
                     </div>
                     </div>
                 </div>
-                </>
-                :
+                </>:
+                comp==1?
                 <AddSupplier comp={comp} setComp={setComp}/>
+                :
+                <RemoveSupplier comp={comp} setComp={setComp}/>
 }
             </div>
         </>

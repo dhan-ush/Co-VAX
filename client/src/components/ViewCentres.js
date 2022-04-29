@@ -3,6 +3,7 @@ import st from "../styles/viewcentres.module.css";
 import { useState } from 'react';
 
 function ViewCentres(props) {
+    const [vaccine,setVaccine]=useState('Covaxin');
     const user = props.user;
     const setUser = props.setUser;
     const comp = props.comp;
@@ -27,6 +28,11 @@ function ViewCentres(props) {
     }
 
     const handleConfirmation = (e) => {
+        console.log(day1)
+        console.log(day2)
+        console.log(day3)
+        console.log(day4)
+        console.log(day5)
         e.preventDefault();
         console.log(selection);
     }
@@ -70,6 +76,23 @@ function ViewCentres(props) {
         },
     ]
     var today = new Date();
+    var day1=new Date(today);
+    today.setDate(today.getDate()+1);
+    var day2=new Date(today);
+    today.setDate(today.getDate()+1);
+    var day3=new Date(today);
+    today.setDate(today.getDate()+1);
+    var day4=new Date(today);
+    today.setDate(today.getDate()+1);
+    var day5=new Date(today);
+    const months=['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+    // day2.setDate(today.getDate()+1);
+    // var day3=new Date();
+    // day3.setDate(today.getDate()+2);
+    // var day4=new Date();
+    // day4.setDate(today.getDate()+3);
+    // var day5=new Date();
+    // day5.setDate(today.getDate()+4);
     return (
         <>
             <div className={st.outer}>
@@ -93,7 +116,7 @@ function ViewCentres(props) {
                         <div>
                             <label for="vaccine_name">Select Vaccine</label>
 
-                            {!user.vaccination_status ?
+                            {user.vaccination_status ==0?
                                 <>
                                     <select id="vaccine_name" onChange={(e) => { setSearch({ ...search, vaccine_name: e.target.value }) }}>
                                         <option value="none">None</option>
@@ -104,8 +127,7 @@ function ViewCentres(props) {
                                 :
                                 <>
                                     <select onChange={(e) => { setSearch({ ...search, vaccine_name: e.target.value }) }}>
-                                        <option value="none">None</option>
-                                        <option value={user.vaccine}>{user.vaccine}</option>
+                                        <option value={vaccine}>{vaccine}</option>
                                     </select>
                                 </>}
                         </div>
@@ -120,11 +142,11 @@ function ViewCentres(props) {
 
                                     <thead className={st.tableHead}>
                                         <th className={st.theading}>Vaccination Center</th>
-                                        <th className={st.theading}>{`${today.getDate()} April`}</th>
-                                        <th className={st.theading}>{`${today.getDate() + 1} April`}</th>
-                                        <th className={st.theading}>{`${today.getDate() + 2} April`}</th>
-                                        <th className={st.theading}>{`${today.getDate() + 3} April`}</th>
-                                        <th className={st.theading}>{`${today.getDate() + 4} April`}</th>
+                                        <th className={st.theading}>{`${day1.getDate()} ${months[day1.getMonth()]}`}</th>
+                                        <th className={st.theading}>{`${day2.getDate()} ${months[day2.getMonth()]}`}</th>
+                                        <th className={st.theading}>{`${day3.getDate()} ${months[day3.getMonth()]}`}</th>
+                                        <th className={st.theading}>{`${day4.getDate()} ${months[day4.getMonth()]}`}</th>
+                                        <th className={st.theading}>{`${day5.getDate()} ${months[day5.getMonth()]}`}</th>
                                     </thead>
                                     <tbody>
                                         {centers.map(w => {

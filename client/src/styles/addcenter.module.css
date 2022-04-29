@@ -21,6 +21,10 @@
 }
 .title a{
     cursor: pointer;
+    color: rgb(1,126,126);
+}
+.title{
+    color: rgb(1,126,126);
 }
 
 .box_left{
@@ -61,7 +65,7 @@
     margin-top: 0.4em;
     margin-bottom: 0.8em;
     font-weight: bold;
-    font-size: 2.2em;
+    font-size: 2.3em;
     /* color: rgb(1,126,126); */
 }
 

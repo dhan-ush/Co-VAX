@@ -1,9 +1,4 @@
 FRONTEND
--register button font/weight
--signin link on userreg page
--add logout button
--adjust position of reg button
--remove confirm_password from user state and user another variable for that
 -css of loginStatus message
 
 BACKEND

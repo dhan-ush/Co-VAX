@@ -17,7 +17,9 @@ function UserDash({user, setUser}) {
       <div className={st.outer}>
         <div className={st.navbar}>
                     <div className={st.logo}>
-                        Co-VAX&nbsp;&nbsp;
+                    <Link to="/" >
+                            <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
+                          </Link>&nbsp;&nbsp;
                     <div className={st.dashlogo}>Dashboard</div>
                     </div>
                     <div className={st.navRight}>

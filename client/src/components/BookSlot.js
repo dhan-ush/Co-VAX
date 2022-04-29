@@ -17,7 +17,7 @@ function BookSlot() {
     gender: "Male",
     date_of_birth: "23-09-2002",
     mobile: "9483902127",
-    vaccination_status: 1.5,
+    vaccination_status: 1,
   });
   const [centres, setCentres] = useState([
   ]);

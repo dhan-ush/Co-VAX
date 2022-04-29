@@ -4,6 +4,7 @@ import GreenIcon from "../assets/greentick.png";
 import RedIcon from "../assets/cross.png";
 
 function ManageBookings() {
+    
     let index = 0;
     const [data, setData] = useState({
         center_id: "1234",
@@ -107,7 +108,7 @@ function ManageBookings() {
 
                                                 <td className={st.tcell}><div className={st.cells}>{w.name}</div></td>
                                                 <td className={st.tcell}><div className={st.cells}>{w.number}</div></td>
-                                                <td className={st.tcell}><div className={st.cells}>{w.vaccination_status == 0 ? 1 : 2}</div></td>
+                                                <td className={st.tcell}><div className={st.cells}>{w.vaccination_status == 1 ? 1 : 2}</div></td>
                                                 <td className={st.tcell}>
                                                     <div className={st.manageB}>
                                                         <div className={st.icon}>

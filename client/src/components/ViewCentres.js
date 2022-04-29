@@ -11,7 +11,7 @@ function ViewCentres(props) {
     const [tab, setTab] = useState(0);
     const [search, setSearch] = useState({
         pincode: "",
-        vaccine_name: "none"
+        vaccine_name: "covaxin"
     })
 
     const [selection, setSelection] = useState({
@@ -119,8 +119,8 @@ function ViewCentres(props) {
                             {user.vaccination_status ==0?
                                 <>
                                     <select id="vaccine_name" onChange={(e) => { setSearch({ ...search, vaccine_name: e.target.value }) }}>
-                                        <option value="none">None</option>
                                         <option value="covaxin">Covaxin</option>
+                                        {/* <option value="none">None</option> */}
                                         <option value="covishield">Covishield</option>
                                     </select>
                                 </>

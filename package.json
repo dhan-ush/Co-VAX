@@ -1,6 +1,8 @@
 {
   "devDependencies": {
     "file-loader": "^6.2.0"
+  },
+  "dependencies": {
+    "react-responsive-carousel": "^3.2.23"
   }
 }
-

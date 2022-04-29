@@ -136,7 +136,6 @@
 .tableDiv{
     margin: 2em 4em;
     overflow-y: scroll;
-    
 }
 .theading1:nth-child(2n){
     background-color: rgb(42, 139, 152);

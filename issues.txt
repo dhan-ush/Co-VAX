@@ -1,11 +1,13 @@
 FRONTEND
 -register button font/weight, placement
--OTP
+-OTP ND
 -signin link on userreg page
 -remove confirm_password from user state and user another variable for that
 -css of loginStatus message
--dont display/display not available if zero jabs available
+-dont display/display not available if zero jabs available ND
 -remove centers back button
+-add redirect to home link on covax logo in nav
+-use same names for user state keys as that of attributes in citizen table ND
 
 BACKEND
 -add "user already exists" in case aadhar_number is already there in citizen table
@@ -17,7 +19,6 @@ ROUTES
 
 GENERAL
 -modify readme.md file
--use same names for user state keys as that of attributes in citizen table
 
 
 order_vaccine 
@@ -26,7 +27,7 @@ manage_bookings
 -GET bookings data
 -POST tick and POST cancel booking routes
 past_bookings
--past_booking data to be fetched on useEffect call
+-past_booking data to be fetched on useEffect cal0l
 
 
 book_slot
@@ -36,6 +37,7 @@ book_slot
 
 -vaccination_status->0,1,2,3,4
 -NULL values hua toh ded
+-raise issue kaha redirect hota hai??
 
 
 optional

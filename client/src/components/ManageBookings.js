@@ -4,17 +4,17 @@ import GreenIcon from "../assets/greentick.png";
 import RedIcon from "../assets/cross.png";
 import axios from "axios";
 
+<<<<<<< HEAD
 function ManageBookings(props) {
+  const [dose,setDose]=useState(1);
+  let index = 0;
   const center = props.center;
   const setCenter = props.setCenter;
-  let index = 0;
   const [data, setData] = useState({
     center_id: center.center_id,
     name: center.name,
     bookings: []
   });
-  
-  
 
   const getData = async () => {
     // call the API to get the bookings for the vaccination center

@@ -6,31 +6,25 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReactLogo from "../assets/admin.svg";
 import { useNavigate } from 'react-router-dom'
-function Userlogin({ admin, setAdmin }) {
+function AdminLogin({ admin, setAdmin }) {
+  const username="admin";
+  const password="admin";
+  const [loginStatus, setloginStatus] = useState("");
   const [credentials, setCredentials] = useState({
-    aadhar: "",
+    username: "",
     password: "",
   });
-  const [loginStatus, setloginStatus] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   };
   const navigate = useNavigate();
   const userSubmit = (e) => {
-    e.preventDefault();
-    console.log(credentials);
-    axios.post("http://localhost:3001/login", credentials).then((response) => {
-      console.log(response);
-      if (response.data.err) {
-        setloginStatus("Unexpected error");
-      } else if (response.data.message) {
-        setloginStatus(response.data.message);
-      } else {
-
+        e.preventDefault();
+        if(credentials.username===username&&credentials.password===password)
         navigate("/adminDash")
-      }
-    });
+        else alert("Incorrect Credentials. Please Try Again!")
+      
   };
   return (
     <>
@@ -72,10 +66,10 @@ function Userlogin({ admin, setAdmin }) {
                   <input
                     class={st.inputNo}
                     type="text"
-                    name="aadhar"
-                    id="aadhar"
+                    name="username"
+                    id="username"
                     placeholder="Enter admin username"
-                    value={credentials.aadhar}
+                    value={credentials.username}
                     onChange={handleChange}
                   ></input>
                   <input
@@ -102,4 +96,4 @@ function Userlogin({ admin, setAdmin }) {
   );
 }
 
-export default Userlogin;
+export default AdminLogin;

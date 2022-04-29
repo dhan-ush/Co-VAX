@@ -3,6 +3,7 @@
 }
 .outer{
     height:85vh;
+    /* width: 40vw; */
     display:flex;
     justify-content: center;
     align-items: center;
@@ -13,10 +14,10 @@
     background-color: white;
     display: flex;
     /* justify-content: center; */
-    height:75vh;
+    height:65vh;
     border: 10px solid white;
     border-radius: 0.7em;
-    width:58vw;
+    width:30vw;
     margin-left: 2em;
 }
 .title a{
@@ -48,7 +49,7 @@
     border-radius: 0.5em;
     display: flex;
     flex-direction: column;
-    width:30vw;
+    width:20vw;
     height: 100%;
     background-color: white;
     /* justify-content: space-between; */
@@ -82,11 +83,18 @@
 }
 .inputNo,.inputNo1{
     border:2px solid rgb(1,126,126);
-    border-radius: 0.3em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border-radius: 0.3em; */
     font-size: 1em;
-    margin-bottom: 1.2em;    
+    margin-bottom: 1.4em;    
     margin-top: 0.6em;
     width:18vw;
+}
+
+.inputNo1{
+    border-radius: 0.3em;
 }
 
 .label,.label1{
@@ -173,4 +181,30 @@
 .rightL{
     margin-right: 2em;
     margin-left: 1em;
+}
+
+.radiolabel{
+    font-size: 1.2em;
+    color: rgb(1,126,126);
+    /* font-weight: bold; */
+    margin-left: 0.3em;
+}
+
+.optt{
+    margin-top: 1em;
+    position: relative;
+    bottom: 0.3em;
+}
+.radioRow{
+    display: flex;
+    align-items: center;
+    margin-top: 1.2em;
+    margin-bottom: 1.7em;
+    /* justify-content: space-between; */
+}
+
+.op{
+    margin-right: 2em;
+    position: relative;
+    left: 3vw;
 }

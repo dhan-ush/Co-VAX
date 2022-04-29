@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import st from "../styles/managebookings.module.css";
+import st from "../styles/removecenter.module.css";
 import RedIcon from "../assets/cross.png";
 import axios from "axios";
-
+ 
 function RemoveCenter({ comp, setComp }) {
   const [centers, setCenters] = useState([]);
   useEffect(() => {
@@ -11,14 +11,14 @@ function RemoveCenter({ comp, setComp }) {
       console.log(response.data);
     });
   }, []);
-
+ 
   const handleCross = (id, center_id) => {
     var removed_center = centers.splice(id, 1);
     var x = [...centers];
     x.filter((_o, i) => id !== i);
     setCenters(x);
     // setCenters(x)
-
+ 
     // // SEND removed_user to backend to update his record accordingly
     axios
       .post("http://localhost:3001/RemoveCenter", { center_id: center_id })
@@ -52,7 +52,7 @@ function RemoveCenter({ comp, setComp }) {
                       <td className={st.tcell}>
                         <div className={st.cells}>{w.center_id}</div>
                       </td>
-
+ 
                       <td className={st.tcell}>
                         <div className={st.cells}>{w.name}</div>
                       </td>

@@ -16,9 +16,9 @@ function AddSupplier(props) {
     }
     var dateFormat = `${today.getFullYear()}-${dmonth}-${day}`;
     const [supplier, setSupplier] = useState({
-        sid: "",
+        vaccine_name: "",
         name: "",
-        jabs: ""
+        jabs_available: ""
     });
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -26,10 +26,7 @@ function AddSupplier(props) {
     };
     const supplierSubmit = (e) => {
         e.preventDefault();
-        if (supplier.password !== supplier.confirm_password) {
-            alert("Password and Confirm Password don't match");
-            return;
-        }
+        // console.log(supplier)
     };
     return (
         <>
@@ -51,24 +48,7 @@ function AddSupplier(props) {
                                 <div className={st.detailsBox}>
                                     <div className={st.rightL}>
                                         <div>
-                                            <label className={st.label} htmlFor="cid">Supplier ID : </label>
-                                            <br />
-                                            <input
-                                                className={st.inputNo}
-                                                type="text"
-                                                name="cid"
-                                                id="cid"
-                                                value={supplier.cid}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className={st.rightR}>
-                                        
-                                    <div>
-                                            <label className={st.label} htmlFor="name"> Supplier Name : </label>
+                                            <label className={st.label} htmlFor="name">Supplier Name : </label>
                                             <br />
                                             <input
                                                 className={st.inputNo}
@@ -80,6 +60,36 @@ function AddSupplier(props) {
                                                 required
                                             />
                                         </div>
+                                        <div className={st.optt}>
+                                            <label className={st.label} htmlFor="vaccine_name"> Vaccine Name : </label>
+                                            <br />
+                                            <div className={st.radioRow}>
+                                                <div className={st.op}>
+                                                    <input className={st.rOption} onClick={(e) => setSupplier({...supplier,vaccine_name:e.target.value})}
+                                                    type="radio" id="covishield" name="vaccine_name" value="covishield" />
+                                                    <label className={st.radiolabel} for="covishield">Covishield</label><br></br>
+                                                </div>
+                                                <div className={st.op}>
+                                                    <input className={st.rOption} onClick={(e) => setSupplier({...supplier,vaccine_name:e.target.value})} 
+                                                    type="radio" id="covaxin" name="vaccine_name" value="covaxin" />
+                                                    <label className={st.radiolabel} for="covaxin">Covaxin</label><br></br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label className={st.label} htmlFor="jabs_available">Jabs Available : </label>
+                                            <br />
+                                            <input
+                                                className={st.inputNo}
+                                                type="text"
+                                                name="jabs_available"
+                                                id="jabs_available"
+                                                value={supplier.jabs_available}
+                                                onChange={handleChange}
+                                                required
+                                            />
+                                        </div>
+
                                         <div>
                                             <br />
                                             <input

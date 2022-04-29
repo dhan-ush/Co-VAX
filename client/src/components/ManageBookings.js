@@ -4,7 +4,7 @@ import GreenIcon from "../assets/greentick.png";
 import RedIcon from "../assets/cross.png";
 
 function ManageBookings() {
-    
+    const [dose,setDose]=useState(1);
     let index = 0;
     const [data, setData] = useState({
         center_id: "1234",

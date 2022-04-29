@@ -7,7 +7,7 @@ function AddCenter(props) {
   const comp = props.comp;
   const setComp = props.setComp;
   var today = new Date();
-  var dmonth = today.getMonth()+1;
+  var dmonth = today.getMonth() + 1;
   var day = today.getDate();
   if (dmonth < 10) {
     dmonth = "0" + dmonth;
@@ -32,7 +32,10 @@ function AddCenter(props) {
   };
   const centerSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/AddCenter", center).then((response) => {console.log(response)});
+    const regexx = /\d{6}/;
+        if (!regexx.test(center.pincode))
+            alert("Please Enter Valid Pincode !!!");
+    axios.post("http://localhost:3001/AddCenter", center).then((response) => { console.log(response) });
   };
   return (
     <>
@@ -87,19 +90,20 @@ function AddCenter(props) {
                       />
                     </div>
                     <div>
-                      <label className={st.label} htmlFor="vaccine_name">
-                        Vaccine Name :
-                      </label>
+                      <label className={st.label} htmlFor="name"> Vaccine Name : </label>
                       <br />
-                      <input
-                        className={st.inputNo}
-                        type="text"
-                        name="vaccine_name"
-                        id="vaccine_name"
-                        onChange={handleChange}
-                        value={center.vaccine_name}
-                        required
-                      />
+                      <div className={st.radioRow}>
+                        <div className={st.op}>
+                          <input className={st.rOption} onClick={(e) => setCenter({...center,vaccine_name:e.target.value})}
+                          type="radio" id="covishield" name="vaccine_name" value="covishield" />
+                          <label className={st.radiolabel} for="covishield">Covishield</label><br></br>
+                        </div>
+                        <div className={st.op}>
+                          <input className={st.rOption} onClick={(e) => setCenter({...center,vaccine_name:e.target.value})}
+                          type="radio" id="covaxin" name="vaccine_name" value="covaxin" />
+                          <label className={st.radiolabel} for="covaxin">Covaxin</label><br></br>
+                        </div>
+                      </div>
                     </div>
                     <div>
                       <label className={st.label} htmlFor="address_line">

@@ -16,6 +16,8 @@ const SupplierList = require("./routes/SupplierList")
 const Order = require("./routes/Order");
 const VaccinationHistory = require("./routes/VaccinationHistory");
 const DisplayManageBookings = require("./routes/DisplayManageBookings")
+const VaccinationDetails = require("./routes/VaccinationDetails")
+const AddCenter = require("./routes/AddCenter")
 //
 
 //routes
@@ -27,6 +29,8 @@ app.use("/SupplierList", SupplierList);
 app.use("/Order", Order);
 app.use("/VaccinationHistory", VaccinationHistory);
 app.use("/DisplayManageBookings", DisplayManageBookings);
+app.use("/VaccinationDetails", VaccinationDetails);
+app.use("/AddCenter", AddCenter);
 //
 
 app.listen(3001, () => {

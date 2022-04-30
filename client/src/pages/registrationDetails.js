@@ -26,9 +26,10 @@ function Registration({ user, setUser }) {
     console.log(user);
     axios.post("http://localhost:3001/register", user).then((response) => {
       console.log(response);
-      alert('Registration Successful! Please Login to Continue using Co-VAX services.');
-      navigate('/userLogin');
+      
     });
+    alert('Registration Successful! Please Login to Continue using Co-VAX services.');
+      navigate('/userLogin');
   };
   return (
     <>

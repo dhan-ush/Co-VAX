@@ -7,15 +7,15 @@ import { useState } from "react";
 import ReactLogo from "../assets/userLogin.svg";
 
 function Registration({ user, setUser }) {
-
-  const [confirm_password,setConfirm_password]=useState('');
+  const [confirm_password, setConfirm_password] = useState("");
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setUser({ ...user, [name]: value });
+    if (name==="primary_number")console.log(value)
   };
   const handleChange1 = (e) => {
     setConfirm_password(e.target.value);
-  }
+  };
   const userSubmit = (e) => {
     e.preventDefault();
     if (user.password !== confirm_password) {
@@ -23,17 +23,20 @@ function Registration({ user, setUser }) {
       return;
     }
     console.log(user);
-    axios.post("http://localhost:3001/register", user)
-      .then((response) => { console.log(response); });
+    axios.post("http://localhost:3001/register", user).then((response) => {
+      console.log(response);
+    });
   };
   return (
     <>
       <div className={styles.outer}>
         <div className={styles.navbar}>
           <div className={styles.logo}>
-          <Link to="/" >
-                            <a href="#" style={{ textDecoration: "none" }}>Co-VAX </a>
-                          </Link>
+            <Link to="/">
+              <a href="#" style={{ textDecoration: "none" }}>
+                Co-VAX{" "}
+              </a>
+            </Link>
           </div>
           <div className={styles.navRight}>
             <div className={styles.signUser}>
@@ -53,7 +56,6 @@ function Registration({ user, setUser }) {
                 <div className={st.title}>User Registration</div>
               </div>
               <div className={st.right_lower}>
-
                 <form
                   onSubmit={userSubmit}
                   className={st.box_form}
@@ -63,7 +65,9 @@ function Registration({ user, setUser }) {
                   <div className={st.detailsBox}>
                     <div className={st.rightL}>
                       <div>
-                        <label className={st.label} htmlFor="aadhar">Aadhar Number: </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          Aadhar Number:{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -76,7 +80,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="name">Name : </label>
+                        <label className={st.label} htmlFor="name">
+                          Name :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -89,7 +95,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="password">Password : </label>
+                        <label className={st.label} htmlFor="password">
+                          Password :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -102,7 +110,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="confirm_password">Confirm Password :</label>
+                        <label className={st.label} htmlFor="confirm_password">
+                          Confirm Password :
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -114,11 +124,12 @@ function Registration({ user, setUser }) {
                           required
                         />
                       </div>
-
                     </div>
                     <div className={st.rightM}>
                       <div>
-                        <label className={st.label} htmlFor="aadhar">Date of Birth : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          Date of Birth :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -130,7 +141,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="gender">Gender : </label>
+                        <label className={st.label} htmlFor="gender">
+                          Gender :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -143,7 +156,9 @@ function Registration({ user, setUser }) {
                       </div>
 
                       <div>
-                        <label className={st.label} htmlFor="aadhar">Primary Number : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          Primary Number :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -155,7 +170,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="aadhar">Secondary Number : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          Secondary Number :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -167,7 +184,7 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       {/* <div className={st.regOut}> */}
-                        
+
                       {/* </div> */}
                       <div className={st.newRow}>
                         <br />
@@ -178,7 +195,10 @@ function Registration({ user, setUser }) {
                         ></input>
                         <div className={st.reg}>
                           Already Registered? &nbsp;
-                          <Link to="/userLogin" style={{ textDecoration: "none" }}>
+                          <Link
+                            to="/userLogin"
+                            style={{ textDecoration: "none" }}
+                          >
                             <a href="#">Sign In </a>
                           </Link>
                         </div>
@@ -186,9 +206,10 @@ function Registration({ user, setUser }) {
                     </div>
 
                     <div className={st.rightR}>
-
                       <div>
-                        <label className={st.label} htmlFor="aadhar">Address Lines : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          Address Lines :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -201,7 +222,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="aadhar">Pincode : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          Pincode :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -214,7 +237,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="aadhar">City : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          City :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -227,7 +252,9 @@ function Registration({ user, setUser }) {
                         />
                       </div>
                       <div>
-                        <label className={st.label} htmlFor="aadhar">State : </label>
+                        <label className={st.label} htmlFor="aadhar">
+                          State :{" "}
+                        </label>
                         <br />
                         <input
                           className={st.inputNo}
@@ -239,10 +266,8 @@ function Registration({ user, setUser }) {
                           required
                         />
                       </div>
-                      
                     </div>
                   </div>
-
                 </form>
               </div>
               {/* <div className={st.regOut}></div> */}

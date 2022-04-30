@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import st from "../styles/removesupplier.module.css";
 import RedIcon from "../assets/cross.png";
 import axios from "axios";
- 
 function RemoveSupplier({ comp, setComp }) {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -19,7 +18,6 @@ function RemoveSupplier({ comp, setComp }) {
     x.filter((_o, i) => id !== i);
     // setCenters(x)
     setData(x)
- 
     // // SEND removed_user to backend to update his record accordingly
     axios
       .post("http://localhost:3001/RemoveSupplier", {
@@ -56,7 +54,6 @@ function RemoveSupplier({ comp, setComp }) {
                       <td className={st.tcell}>
                         <div className={st.cells}>{w.supplier_id}</div>
                       </td>
- 
                       <td className={st.tcell}>
                         <div className={st.cells}>{w.name}</div>
                       </td>
@@ -89,5 +86,5 @@ function RemoveSupplier({ comp, setComp }) {
     </>
   );
 }
- 
+
 export default RemoveSupplier;

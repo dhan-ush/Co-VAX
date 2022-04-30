@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Homepage from "./pages/homepage";
 import Userlogin from "./pages/userLogin";
 import Centerlogin from "./pages/centerLogin";
-import UserReg from "./pages/userReg";
 import Reg from "./pages/registrationDetails";
 import Dashboard from "./pages/dashboard";
 import Profile from "./components/Profile";
@@ -56,7 +55,6 @@ function App() {
           <Route path="/userlogin" element={<Userlogin user={user} setUser={setUser} />} />
           <Route path="/centerlogin" element={<Centerlogin center={center} setCenter={setCenter} />} />
           <Route path="/adminlogin" element={<Adminlogin admin={admin} setAdmin={setAdmin} />} />
-          <Route path="/userReg" element={<UserReg user={user} setUser={setUser} />} />
           <Route path="/dash" element={<Dashboard user={user} setUser={setUser} />} />
           <Route path="/centerDash" element={<CenterDash center={center} setUser={setCenter} />} />
           <Route path="/adminDash" element={<AdminDash admin={admin} setUser={setAdmin} />} />

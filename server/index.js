@@ -15,11 +15,15 @@ const BookSlot = require("./routes/BookSlot");
 const SupplierList = require("./routes/SupplierList");
 const Order = require("./routes/Order");
 const VaccinationHistory = require("./routes/VaccinationHistory");
-const DisplayManageBookings = require("./routes/DisplayManageBookings");
+const ManageBookings = require("./routes/ManageBookings");
 const VaccinationDetails = require("./routes/VaccinationDetails");
 const AddCenter = require("./routes/AddCenter");
 const CenterLogin = require("./routes/CenterLogin");
 const RemoveCenter = require("./routes/RemoveCenter");
+const CenterList = require("./routes/CenterList");
+const AddSupplier = require("./routes/AddSupplier")
+const RemoveSupplier = require("./routes/RemoveSupplier")
+const AdminSupplierList = require("./routes/AdminSupplierList")
 //
 
 //routes
@@ -30,11 +34,15 @@ app.use("/BookSlot", BookSlot);
 app.use("/SupplierList", SupplierList);
 app.use("/Order", Order);
 app.use("/VaccinationHistory", VaccinationHistory);
-app.use("/DisplayManageBookings", DisplayManageBookings);
+app.use("/ManageBookings", ManageBookings);
 app.use("/VaccinationDetails", VaccinationDetails);
 app.use("/AddCenter", AddCenter);
 app.use("/CenterLogin", CenterLogin);
 app.use("/RemoveCenter", RemoveCenter);
+app.use("/CenterList", CenterList);
+app.use("/AddSupplier", AddSupplier)
+app.use("/RemoveSupplier", RemoveSupplier)
+app.use("/AdminSupplierList", AdminSupplierList)
 //
 
 app.listen(3001, () => {

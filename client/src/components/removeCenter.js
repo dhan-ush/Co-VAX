@@ -82,5 +82,5 @@ function RemoveCenter({ comp, setComp }) {
     </>
   );
 }
- 
+
 export default RemoveCenter;

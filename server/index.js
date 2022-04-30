@@ -27,9 +27,9 @@ const AdminSupplierList = require("./routes/AdminSupplierList")
 const UpdateSupplyTable =  require("./routes/UpdateSupplyTable")
 const ConvertToHash =  require("./routes/ConvertToHash")
 const GetVaccineDose1 =  require("./routes/GetVaccineDose1")
-
 const AddStaff = require("./routes/AddStaff")
 const RemoveStaff = require("./routes/RemoveStaff")
+const Certificate = require("./routes/Certificate")
 //
 
 //routes
@@ -54,6 +54,7 @@ app.use("/GetVaccineDose1", GetVaccineDose1)
 app.use("/UpdateSupplyTable", UpdateSupplyTable)
 app.use("/AddStaff", AddStaff)
 app.use("/RemoveStaff",RemoveStaff)
+app.use("/Certificate",Certificate)
 //
 
 app.listen(3001, () => {

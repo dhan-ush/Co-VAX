@@ -4,12 +4,28 @@ import Logo from "../assets/user.png";
 import { Link } from "react-router-dom";
 import ProfileIcon from "../assets/icon-man.svg";
 import Moment from "moment";
+import axios from "axios";
+import { saveAs } from 'file-saver'
 
 function Profile({ user, setUser }) {
   const getStatus = (vaccination_status) => {
     if (vaccination_status === 0) return "Not Vaccinated";
     else if (vaccination_status === 1) return "Partially Vaccinated";
     else return "Fully Vaccinated";
+  };
+  const certificate = () => {
+    if (user.vaccination_status===4){
+      axios
+      .post("http://localhost:3001/Certificate/create-pdf", {aadhar_number:user.aadhar})
+      .then(() => axios.get("http://localhost:3001/Certificate/fetch-pdf", { responseType: "blob" }))
+      .then((res) => {
+        const pdfBlob = new Blob([res.data], { type: "application/pdf" });
+        saveAs(pdfBlob, "newPdf.pdf");
+      });
+    }
+    else{
+      console.log("Complete both doses");
+    }
   };
   return (
     <>
@@ -20,12 +36,12 @@ function Profile({ user, setUser }) {
           <div className={st.right}>
             <div className={st.rightTop}>
               <div className={st.content1}>{user.name}</div>
-              {user.vaccination_status == 0 ? (
-                <div></div>
-              ) : (
+              {user.vaccination_status == 4 ? (
                 <div className={st.buttondiv}>
-                  <button className={st.download}>Download Certificate</button>
+                  <button className={st.download} onClick={certificate}>Download Certificate</button>
                 </div>
+              ) : (
+                <div></div>
               )}
             </div>
             <div className={st.rightBottom}>

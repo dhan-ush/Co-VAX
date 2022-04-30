@@ -5,11 +5,13 @@ import { useState , useEffect } from "react";
 import ManageBookings from "../components/ManageBookings.js";
 import PastBookings from '../components/PastBookings';
 import OrderVaccine from '../components/OrderVaccine';
+import CenterProfile from '../components/CenterProfile';
+import CenterMainpage from '../components/CenterMainpage';
 
 function CenterDash(props) {
     const center=props.center;
     const setCenter=props.setCenter;
-    const [nav,setNav]= useState(1);
+    const [nav,setNav]= useState(0);
     return (
         <>
             <div className={st.outer}>
@@ -21,6 +23,11 @@ function CenterDash(props) {
                         <div className={st.dashlogo}>Dashboard</div>
                     </div>
                     <div className={st.navRight}>
+                        <div className={st.logout}>
+                            <button onClick={() => setNav(0)
+                            }
+                                className={st.linkk}>profile</button>
+                        </div>
                         <div className={st.logout}>
                             <button onClick={() => setNav(1)
                             }
@@ -42,6 +49,8 @@ function CenterDash(props) {
                 </div>
                 <div className={st.lower}>
                     {
+                        nav==0?
+                        <CenterMainpage center={center} setCenter={setCenter}/>:
                         nav==1?
                         <ManageBookings center={center} setCenter={setCenter}/>:
                         nav == 2? 

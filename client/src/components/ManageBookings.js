@@ -4,7 +4,7 @@ import GreenIcon from "../assets/greentick.png";
 import RedIcon from "../assets/cross.png";
 
 function ManageBookings() {
-    const [dose,setDose]=useState(1);
+    const [dose, setDose] = useState(1);
     let index = 0;
     const [data, setData] = useState({
         center_id: "1234",
@@ -36,7 +36,10 @@ function ManageBookings() {
             }
         ]
     })
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
+    }
     const getData = async () => {
         // call the API to get the bookings for the vaccination center
     }
@@ -66,7 +69,7 @@ function ManageBookings() {
     }
     return (
         <>
-        <div className={st.out}>
+            <div className={st.out}>
                 <div className={st.info}>
                     <div>
                         <span>Center Name: </span> <div className={st.data}> {data.center_name}</div>
@@ -80,9 +83,24 @@ function ManageBookings() {
                         </div>
                     </div>
                 </div>
-                <div>
+                
+                <div className={st.radioRow}>    
+                <div className={st.radiotitlee}>Select Dose :</div>
+                    <div className={st.op}>
+                        <input selected checked="true" className={st.rOption} onClick={(e) => setDose(1)}
+                            type="radio" id="dose1" name="dose" value="dose1" />
+                        <label className={st.radiolabel} for="dose1">Dose 1</label><br></br>
+                    </div>
+                    <div className={st.op}>
+                        <input className={st.rOption} onClick={(e) => setDose(2)}
+                            type="radio" id="dose2" name="dose" value="dose2" />
+                        <label className={st.radiolabel} for="dose2">Dose 2</label><br></br>
+                    </div>
+                    <button className={st.submit1} onClick={(e) => { handleSubmit(e) }}>Update</button>
+                </div>
+                <div className={st.outertablediv}>
                     <div className={st.tableDiv}>
-                        {data.bookings.length == 0 ? <div>No Bookings Available</div> :
+                        {data.bookings.length == 0 ? <div className={st.noBook}>No Bookings Available</div> :
                             <table>
 
                                 <thead className={st.tableHead}>
@@ -90,7 +108,6 @@ function ManageBookings() {
                                     <th className={st.theading}>Identification Number</th>
                                     <th className={st.theading}>Name</th>
                                     <th className={st.theading}>Mobile Number</th>
-                                    <th className={st.theading}>Dose No.</th>
                                     <th className={st.theading}>Manage</th>
                                 </thead>
                                 <tbody>
@@ -108,7 +125,6 @@ function ManageBookings() {
 
                                                 <td className={st.tcell}><div className={st.cells}>{w.name}</div></td>
                                                 <td className={st.tcell}><div className={st.cells}>{w.number}</div></td>
-                                                <td className={st.tcell}><div className={st.cells}>{w.vaccination_status == 1 ? 1 : 2}</div></td>
                                                 <td className={st.tcell}>
                                                     <div className={st.manageB}>
                                                         <div className={st.icon}>
@@ -127,7 +143,7 @@ function ManageBookings() {
 
                     </div>
                 </div>
-                </div>
+            </div>
         </>
     )
 }

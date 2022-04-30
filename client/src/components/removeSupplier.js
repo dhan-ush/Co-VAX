@@ -40,7 +40,7 @@ function RemoveSupplier({ comp, setComp }) {
             </a>
             &nbsp;Remove Suppliers
           </div>
-          <div>
+          <div className={st.tableDiv}>
             <table>
               <thead className={st.tableHead}>
                 <th className={st.theading}>Supplier Id.</th>

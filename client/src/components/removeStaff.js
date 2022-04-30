@@ -2,28 +2,31 @@ import React, { useState, useEffect } from "react";
 import st from "../styles/removestaff.module.css";
 import RedIcon from "../assets/cross.png";
 import axios from "axios";
- 
-function RemoveStaff({ comp, setComp }) {
+
+function RemoveStaff({ center, comp, setComp }) {
   const [data, setData] = useState([]);
   useEffect(() => {
+    console.log(center.center_id);
     axios
-      .post("http://localhost:3001/AdminStaffList", {})
+      .post("http://localhost:3001/StaffList", {
+        center_id: center.center_id,
+      })
       .then((response) => {
         setData(response.data);
         console.log(response.data);
       });
   }, []);
-  const handleCross = (id, supplier_id) => {
+  const handleCross = (id, aadhar_number) => {
     var removed_staff = data.splice(id, 1);
     var x = [...data];
     x.filter((_o, i) => id !== i);
     // setCenters(x)
-    setData(x)
- 
+    setData(x);
+
     // // SEND removed_user to backend to update his record accordingly
     axios
-      .post("http://localhost:3001/RemoveSupplier", {
-        supplier_id: supplier_id,
+      .post("http://localhost:3001/RemoveStaff", {
+        aadhar_number: aadhar_number,
       })
       .then((response) => {
         console.log(response.data);
@@ -55,7 +58,7 @@ function RemoveStaff({ comp, setComp }) {
                       <td className={st.tcell}>
                         <div className={st.cells}>{w.aadhar_number}</div>
                       </td>
- 
+
                       <td className={st.tcell}>
                         <div className={st.cells}>{w.name}</div>
                       </td>
@@ -68,7 +71,9 @@ function RemoveStaff({ comp, setComp }) {
                             <img
                               className={st.bImgr}
                               src={RedIcon}
-                              onClick={() => handleCross(index, w.supplier_id)}
+                              onClick={() =>
+                                handleCross(index, w.aadhar_number)
+                              }
                               alt="React Logo"
                             />
                           </div>
@@ -85,5 +90,5 @@ function RemoveStaff({ comp, setComp }) {
     </>
   );
 }
- 
+
 export default RemoveStaff;

@@ -26,6 +26,9 @@ const RemoveSupplier = require("./routes/RemoveSupplier")
 const AdminSupplierList = require("./routes/AdminSupplierList")
 const AddStaff = require("./routes/AddStaff")
 const RemoveStaff = require("./routes/RemoveStaff")
+const StaffList = require("./routes/StaffList")
+const AddIssue = require("./routes/AddIssue")
+const DisplayIssues =  require("./routes/DisplayIssues")
 //
 
 //routes
@@ -47,6 +50,9 @@ app.use("/RemoveSupplier", RemoveSupplier)
 app.use("/AdminSupplierList", AdminSupplierList)
 app.use("/AddStaff", AddStaff)
 app.use("/RemoveStaff",RemoveStaff)
+app.use("/StaffList",StaffList)
+app.use("/AddIssue", AddIssue)
+app.use("/DisplayIssues",DisplayIssues)
 //
 
 app.listen(3001, () => {

@@ -3,6 +3,7 @@ import axios from "axios";
 import Moment from "moment";
 import st from "../styles/managebookings.module.css";
 function PastBookings(props) {
+  const [dose,setDose]=useState(0);
   const center = props.center;
   const setCenter = props.setCenter;
   //   const data = [
@@ -31,6 +32,9 @@ function PastBookings(props) {
   //       date: "23-02-2022",
   //     },
   //   ];
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+  }
   const [data, setdata] = useState([]);
   useEffect(() => {
     axios
@@ -47,6 +51,20 @@ function PastBookings(props) {
     <>
       <div className={st.outer1}>
         <div className={st.title1}>Vaccination History</div>
+        <div className={st.radioRow}>    
+                <div className={st.radiotitlee}>Select Dose :</div>
+                    <div className={st.op}>
+                        <input selected checked="true" className={st.rOption} onClick={(e) => setDose(1)}
+                            type="radio" id="dose1" name="dose" value="dose1" />
+                        <label className={st.radiolabel} for="dose1">Dose 1</label><br></br>
+                    </div>
+                    <div className={st.op}>
+                        <input className={st.rOption} onClick={(e) => setDose(2)}
+                            type="radio" id="dose2" name="dose" value="dose2" />
+                        <label className={st.radiolabel} for="dose2">Dose 2</label><br></br>
+                    </div>
+                    <button className={st.submit1} onClick={(e) => { handleSubmit(e) }}>Update</button>
+                </div>
         <div className={st.tableDiv}>
           {data.length == 0 ? (
             <div>No Past Bookings !!</div>

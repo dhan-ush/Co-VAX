@@ -14,7 +14,7 @@ import AdminDash from "./pages/adminDash";
 
 function App() {
   const [user, setUser] = useState({
-    aadhar: "",
+    aadhar: "wdadwa",
     name: "",
     password: "",
     confirm_password: "",

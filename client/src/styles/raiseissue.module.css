@@ -66,7 +66,15 @@
     text-align: top;
     font-size: 1.4em;
 }
-
+.wordcount{
+    margin-right: 1.5em;
+    font-size: 1.1em;
+    color:rgb(1,126,126)
+}
+.btn{
+    display: flex;
+    align-items: center;
+}
 .info{
     margin-left: 3em;
     color: #949fb2;

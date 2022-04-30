@@ -16,11 +16,12 @@ function HomeCarousel() {
                 <div>
                     <img src={Pic1} />
                 </div>
-                <div>
-                    <img src={Pic2} />
-                </div>
+                
                 <div>
                     <img src={Pic} />
+                </div>
+                <div>
+                    <img src={Pic2} />
                 </div>
             </Carousel>
         </>

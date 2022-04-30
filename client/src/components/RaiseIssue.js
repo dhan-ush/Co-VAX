@@ -3,8 +3,22 @@ import st from '../styles/raiseissue.module.css'
 import { useState } from 'react';
 import { Link } from "react-router-dom"
 
-function RaiseIssue() {
+function RaiseIssue({user,setUser}) {
   const [issueInput,setIssueInput]=useState("");
+
+  const handleSubmit= (e) => {
+    e.preventDefault();
+    console.log(issueInput);
+    if(issueInput.length>200)
+    {
+      alert('Word Limit Exceeded!')
+      return;
+    }
+    else{
+
+    }
+    // console.log(user.aadhar)
+  }
   return (
     <> 
     <div className={st.outer}>
@@ -13,7 +27,10 @@ function RaiseIssue() {
                 Raise an Issue:
             </div>
             <div className={st.info}>
-            Raise any issue regarding your account with our support team. Our team will contact you and resolve them at the earliest.
+            Raise any issue regarding your experience with our support team (in less than 200 words) 
+            </div>
+            <div className={st.info}>
+             Our team will contact you and resolve them at the earliest. 
             </div>
             <div className={st.textbox}>
               <textarea onChange={ (e) => {
@@ -25,7 +42,8 @@ function RaiseIssue() {
               type="text"  ></textarea>
             </div>
             <div className={st.btn}>
-              <button className={st.submitbtn}>Submit</button>
+              <div className={st.wordcount}>Word Count:{issueInput.length}</div>
+              <button onClick={handleSubmit} className={st.submitbtn}>Submit</button>
             </div>
         </div>
     </div>

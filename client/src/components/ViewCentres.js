@@ -35,6 +35,7 @@ function ViewCentres(props) {
         console.log(day5)
         e.preventDefault();
         console.log(selection);
+        setComp()
     }
 
     const centers = [

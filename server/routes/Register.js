@@ -37,7 +37,7 @@ router.use("/", async (req, res) => {
   hashed_password = await bcrypt.hash(password, salt);
   console.log(`Hash: ${hashed_password}`);
   db.query(
-    "INSERT INTO citizen (aadhar_number, name, password, date_of_birth, gender, primary_number, secondary_number, vaccination_status, address_line, pincode, city, state) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+    "INSERT INTO citizen (aadhar_number, name, password, date_of_birth, gender, primary_number, secondary_number, vaccination_status, address_line, pincode, city, state) VALUES (?,?,?,?,?,?,?,0,?,?,?,?)",
     [
       aadhar,
       name,
@@ -46,7 +46,6 @@ router.use("/", async (req, res) => {
       gender,
       primary_number,
       secondary_number,
-      vaccination_status,
       address_line,
       pincode,
       city,

@@ -15,21 +15,34 @@ db.connect((err) => {
     return;
   }
   console.log("connected as id: " + db.threadId);
-}); 
+});
+
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
 
 router.post("/", async (req, res) => {
-  const {pincode} = req.body;
+  const { pincode, vaccine_name, days } = req.body;
   db.query(
-    "SELECT * FROM vaccination_center WHERE pincode= ?",
-    pincode,
+    "SELECT * FROM vaccination_center WHERE pincode= ? AND vaccine_name= ?",
+    [pincode, vaccine_name],
     async (err, result) => {
       if (err) {
         res.send({ err: err });
-      }
-      else {
+      } else {
         db.query(
-          "SELECT DISTINCT center_id FROM vaccination_center WHERE pincode= ?",
-          pincode,
+          "SELECT DISTINCT center_id FROM vaccination_center WHERE pincode= ? AND vaccine_name= ?",
+          [pincode,vaccine_name],
           async (err1, result1) => {
             const center_ids = [];
             if(err1){
@@ -57,21 +70,24 @@ router.post("/", async (req, res) => {
                   break;
                 }
               }
-              let curr = 0;
+              for(let curr = 0;curr<5;curr++){
               for(let j = 0;j<result.length;j++){
-                if(center_ids[i] ==  result[j].center_id){
+                if(center_ids[i] ==  result[j].center_id && formatDate(result[j].date) == days[curr]){
                   vaccination_center.jabs_unbooked[curr] = result[j].jabs_unbooked;
                   vaccination_center.jabs_booked[curr] = result[j].jabs_booked;
-                  curr++;
+                  flag = 0;
+                  break;
                 }
               }
+            }
               finalResult.push(vaccination_center);
             }
             res.send(finalResult);
           }
         }
         )
-        }}
+      }
+    }
   );
 });
 

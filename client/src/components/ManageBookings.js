@@ -5,14 +5,14 @@ import RedIcon from "../assets/cross.png";
 import axios from "axios";
 
 function ManageBookings(props) {
-  const [dose,setDose]=useState(1);
+  const [dose, setDose] = useState(1);
   let index = 0;
   const center = props.center;
   const setCenter = props.setCenter;
   const [data, setData] = useState({
     center_id: center.center_id,
     name: center.name,
-    bookings: []
+    bookings: [],
   });
 
   const getData = async () => {
@@ -20,14 +20,29 @@ function ManageBookings(props) {
   };
 
   useEffect(() => {
-    axios.post("http://localhost:3001/ManageBookings/display", { center_id:center.center_id, dose_number:1 })
-  .then((response)=>{
-    console.log(response)
-    setData({...data, bookings:response.data})
-  })
+    axios
+      .post("http://localhost:3001/ManageBookings/display", {
+        center_id: center.center_id,
+        dose_number: 1,
+      })
+      .then((response) => {
+        console.log(response);
+        setData({ ...data, bookings: response.data });
+      });
   }, []);
 
   const handleTick = (id) => {
+    // console.log(id);
+    // console.log(data.bookings[id].aadhar_number);
+    // console.log(center.center_id,);
+    
+    axios.post("http://localhost:3001/ManageBookings/approve", {
+      aadhar_number: data.bookings[id].aadhar_number,
+      center_id: center.center_id,
+      dose_number: 1,
+    }).then((response) => {
+      console.log(response);
+    });
     var done_user = data.bookings.splice(id, 1);
     var x = data.bookings;
     x.filter((o, i) => id !== i);
@@ -37,6 +52,13 @@ function ManageBookings(props) {
   };
 
   const handleCross = (id) => {
+    axios.post("http://localhost:3001/ManageBookings/reject", {
+      aadhar_number: data.bookings[id].aadhar_number,
+      center_id: center.center_id,
+      dose_number: 1,
+    }).then((response) => {
+      console.log(response);
+    });
     var removed_user = data.bookings.splice(id, 1);
     var x = data.bookings;
     x.filter((o, i) => id !== i);

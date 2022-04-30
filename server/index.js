@@ -24,6 +24,9 @@ const CenterList = require("./routes/CenterList");
 const AddSupplier = require("./routes/AddSupplier")
 const RemoveSupplier = require("./routes/RemoveSupplier")
 const AdminSupplierList = require("./routes/AdminSupplierList")
+// const UpdateSupplyTabe =  require("./routes/UpdateSupplyTable")
+const ConvertToHash =  require("./routes/ConvertToHash")
+
 //
 
 //routes
@@ -43,6 +46,7 @@ app.use("/CenterList", CenterList);
 app.use("/AddSupplier", AddSupplier)
 app.use("/RemoveSupplier", RemoveSupplier)
 app.use("/AdminSupplierList", AdminSupplierList)
+app.use("/ConvertToHash", ConvertToHash)
 //
 
 app.listen(3001, () => {

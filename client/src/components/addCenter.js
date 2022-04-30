@@ -33,10 +33,16 @@ function AddCenter(props) {
   const centerSubmit = (e) => {
     e.preventDefault();
     const regexx = /\d{6}/;
-        if (!regexx.test(center.pincode))
-            alert("Please Enter Valid Pincode !!!");
+    if (!regexx.test(center.pincode)) {
+      alert("Please Enter Valid Pincode !!!")
+      return;
+    }else{
+    alert("Vaccination Center Added Successfully");
+        
     axios.post("http://localhost:3001/AddCenter", center).then((response) => { console.log(response) });
-  };
+    setComp(0)
+    }
+    }
   return (
     <>
       <div className={st.outer}>

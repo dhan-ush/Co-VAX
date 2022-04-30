@@ -18,22 +18,20 @@ db.connect((err) => {
 });
 
 router.use("/", async (req, res) => {
-  const { aadhar_number, center_id, role } = req.body;
+  const { aadhar_number, issue } = req.body;
   db.query(
-    "SELECT * FROM citizen WHERE aadhar_number=?",
+    "SELECT name from citizen WHERE aadhar_number = ?",
     aadhar_number,
     (err, result) => {
       if (err) {
         res.send({ err: err });
-      } else if (result.length === 0) {
-        res.send(result);
       } else {
         db.query(
-          "INSERT INTO works VALUES (?,?,?)",
-          [aadhar_number, center_id, role],
+          "INSERT INTO issues values (?,?,?)",
+          [aadhar_number, result[0].name, issue],
           (err, result2) => {
             if (err) {
-              res.send("Staff Exists");
+              res.send({ err: err });
             } else {
               res.send("Success");
             }

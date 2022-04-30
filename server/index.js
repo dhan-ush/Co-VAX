@@ -30,6 +30,9 @@ const GetVaccineDose1 =  require("./routes/GetVaccineDose1")
 const AddStaff = require("./routes/AddStaff")
 const RemoveStaff = require("./routes/RemoveStaff")
 const Certificate = require("./routes/Certificate")
+const StaffList = require("./routes/StaffList")
+const AddIssue = require("./routes/AddIssue")
+const DisplayIssues =  require("./routes/DisplayIssues")
 //
 
 //routes
@@ -55,6 +58,9 @@ app.use("/UpdateSupplyTable", UpdateSupplyTable)
 app.use("/AddStaff", AddStaff)
 app.use("/RemoveStaff",RemoveStaff)
 app.use("/Certificate",Certificate)
+app.use("/StaffList",StaffList)
+app.use("/AddIssue", AddIssue)
+app.use("/DisplayIssues",DisplayIssues)
 //
 
 app.listen(3001, () => {

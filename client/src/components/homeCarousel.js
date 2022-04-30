@@ -20,7 +20,7 @@ function HomeCarousel() {
                     <img src={Pic} />
                 </div>
                 <div>
-                    <img src={Pic2} height={500} width={1500}/>
+                    <img src={Pic2} style={{height:"500px", width:"1500px"}}/>
                 </div>
             </Carousel>
         </>

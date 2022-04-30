@@ -44,7 +44,17 @@ router.post("/reject", async (req, res) => {
         res.send({ err: err });
       } 
       else{
-        res.send("Success");
+        db.query(
+          "UPDATE citizen SET vaccination_status = vaccination_status-1 WHERE aadhar_number = ?",
+          aadhar_number,
+          (err,result4) => {
+            if(err){
+              res.send({err:err})
+            }else{
+              res.send("Success")
+            }
+          }
+        )
       }
     }
   )

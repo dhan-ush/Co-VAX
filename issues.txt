@@ -39,3 +39,4 @@ book_slot
 optional
 -change boooked center
 
+-display vaccination_center IDs on vaccine booking page of userdash

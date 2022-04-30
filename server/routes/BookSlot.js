@@ -22,23 +22,54 @@ router.post("/", async (req, res) => {
   const { center_id, date, dose_number, aadhar_number } = req.body;
   db.query(
     "UPDATE vaccination_center SET jabs_unbooked = jabs_unbooked - 1 ,jabs_booked = jabs_booked + 1 WHERE center_id = ? AND date = ?;" +
-      "INSERT into book_slot? SELECT ?,?,?, MAX(booking_id) + 1 FROM book_slot?",
-    [center_id, date, dose_number, aadhar_number, center_id, date, dose_number],
+      "INSERT into book_slot? SELECT ?,?,?, MAX(booking_id) + 1 FROM book_slot?;" +
+      "UPDATE citizen SET vaccination_status = vaccination_status + 1 WHERE aadhar_number = ?",
+    [
+      center_id,
+      date,
+      dose_number,
+      aadhar_number,
+      center_id,
+      date,
+      dose_number,
+      aadhar_number,
+    ],
     async (err, result) => {
       if (err) {
         db.query(
-            "INSERT into book_slot? VALUES (?,?,?,1)",
-            [dose_number, aadhar_number, center_id, date],
-            async (err, result) => {
-              if (err) {
-                res.send({ err: err });
-              } else {
-                res.send("Success from error");
-              }
+          "INSERT into book_slot? VALUES (?,?,?,1);" +
+            "UPDATE citizen SET vaccination_status = vaccination_status + 1 WHERE aadhar_number = ?",
+          [dose_number, aadhar_number, center_id, date, aadhar_number],
+          async (err, result) => {
+            if (err) {
+              res.send({ err: err });
+            } else {
+              db.query(
+                "SELECT * FROM citizen WHERE aadhar_number=?",
+                aadhar_number,
+                async (err, result) => {
+                  if (err) {
+                    res.send(err);
+                  } else {
+                    res.send(result);
+                  }
+                }
+              );
             }
+          }
         );
       } else {
-        res.send(result);
+        db.query(
+          "SELECT * FROM citizen WHERE aadhar_number=?",
+          aadhar_number,
+          async (err, result) => {
+            if (err) {
+              res.send(err);
+            } else {
+              res.send(result);
+            }
+          }
+        );
       }
     }
   );

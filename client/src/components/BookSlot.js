@@ -12,7 +12,7 @@ const moment = require("moment");
 
 function BookSlot({ user, setUser }) {
   const [vaccinationDetails, setvaccinationDetails] = useState([]);
-  const [daysPassed, setdaysPassed] = useState(0);
+  const [daysPassed, setdaysPassed] = useState(70);
   useEffect(() => {
     axios
       .post("http://localhost:3001/VaccinationDetails", {
@@ -74,6 +74,7 @@ function BookSlot({ user, setUser }) {
         console.log(response.data);
       });
   }, []);
+  // useEffect(()=>{})
 
   const [comp, setComp] = useState(1);
 

@@ -19,7 +19,7 @@ function CenterProfile({center,setCenter,comp,setComp}) {
               <div className={st.innerLeft}>
                 <div className={st.row}>
                   <div className={st.fieldName}>Center ID</div>
-                  <div className={st.content}>{center.cid}</div>
+                  <div className={st.content}>{center.center_id}</div>
                 </div>
                 <div className={st.row}>
                   <div className={st.fieldName}>Vaccine Name</div>

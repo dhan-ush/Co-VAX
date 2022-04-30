@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import styles from "../styles/homepage.module.css";
 import st from "../styles/regdetails.module.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ReactLogo from "../assets/userLogin.svg";
 
@@ -16,6 +16,7 @@ function Registration({ user, setUser }) {
   const handleChange1 = (e) => {
     setConfirm_password(e.target.value);
   };
+  let navigate=useNavigate();
   const userSubmit = (e) => {
     e.preventDefault();
     if (user.password !== confirm_password) {
@@ -25,6 +26,8 @@ function Registration({ user, setUser }) {
     console.log(user);
     axios.post("http://localhost:3001/register", user).then((response) => {
       console.log(response);
+      alert('Registration Successful! Please Login to Continue using Co-VAX services.');
+      navigate('/userLogin');
     });
   };
   return (

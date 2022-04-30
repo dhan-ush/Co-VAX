@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react';
 import st from '../styles/addstaff.module.css'
+import axios from "axios"
 
 function AddStaff(props) {
     const comp = props.comp;
     const setComp = props.setComp;
     const [staff, setStaff] = useState({
         aadhar_number: "",
-        cid: "",
+        center_id: "",
         role: ""
     });
     const handleChange = (e) => {

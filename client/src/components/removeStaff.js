@@ -7,7 +7,7 @@ function RemoveStaff({ comp, setComp }) {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .post("http://localhost:3001/AdminSupplierList", {})
+      .post("http://localhost:3001/AdminStaffList", {})
       .then((response) => {
         setData(response.data);
         console.log(response.data);

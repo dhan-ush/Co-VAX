@@ -24,6 +24,12 @@ const CenterList = require("./routes/CenterList");
 const AddSupplier = require("./routes/AddSupplier")
 const RemoveSupplier = require("./routes/RemoveSupplier")
 const AdminSupplierList = require("./routes/AdminSupplierList")
+const UpdateSupplyTable =  require("./routes/UpdateSupplyTable")
+const ConvertToHash =  require("./routes/ConvertToHash")
+const GetVaccineDose1 =  require("./routes/GetVaccineDose1")
+
+const AddStaff = require("./routes/AddStaff")
+const RemoveStaff = require("./routes/RemoveStaff")
 //
 
 //routes
@@ -43,6 +49,11 @@ app.use("/CenterList", CenterList);
 app.use("/AddSupplier", AddSupplier)
 app.use("/RemoveSupplier", RemoveSupplier)
 app.use("/AdminSupplierList", AdminSupplierList)
+app.use("/ConvertToHash", ConvertToHash)
+app.use("/GetVaccineDose1", GetVaccineDose1)
+app.use("/UpdateSupplyTable", UpdateSupplyTable)
+app.use("/AddStaff", AddStaff)
+app.use("/RemoveStaff",RemoveStaff)
 //
 
 app.listen(3001, () => {

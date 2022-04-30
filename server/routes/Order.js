@@ -57,7 +57,7 @@ router.post("/", async (req, res) => {
                     else{
                       db.query(
                         "INSERT INTO vaccination_center VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                        [center_id,date,result4[0].name,result4[0].address_line,result4[0].city,result4[0].state,result4[0].pincode,result4[0].nearest_landmark,jabs_ordered,0,result4[0].vaccine_name],
+                        [center_id,date,result4[0].name,result4[0].address_line,result4[0].city,result4[0].state,result4[0].pincode,result4[0].password,jabs_ordered,0,result4[0].vaccine_name],
                       )
                       async(err, result5) => {
                         if (err) {

@@ -28,6 +28,20 @@ function App() {
     city: "",
     state: "",
   });
+  // const [user, setUser] = useState({
+  //   aadhar_number: "",
+  //   name: "",
+  //   date_of_birth: "",
+  //   gender: "",
+  //   primary_gender: "",
+  //   secondary_number: "",
+  //   vaccination_status: 0,
+  //   pincode: "",
+  //   city: "",
+  //   state: "",
+  //   address_line: "",
+  //   password: ""
+  // });
   const [center, setCenter] = useState({
     center_id: -1,
     date: "",

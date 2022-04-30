@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState , useEffect } from "react";
 import ManageCenter from "../components/manageCenter";
 import ManageSupplier from "../components/manageSupplier";
+import ViewIssues from "../components/viewissues";
 
 function UserDash({user, setUser}) {
   const [comp, setComp] = useState(1);
@@ -32,10 +33,10 @@ function UserDash({user, setUser}) {
                             }
                             className={st.linkk}>Manage Suppliers</button>
                         </div>
-                        {/* <div className={st.logout}>
+                        <div className={st.logout}>
                             <button onClick={ () => setComp(3)
-                            }className={st.linkk}></button>
-                        </div> */}
+                            }className={st.linkk}>View USer Issues</button>
+                        </div>
                         <div className={st.logout}>
                             <Link to="/" style={{ textDecoration: "none" }}><button onClick={logout} className={st.linkk}>Logout</button></Link>
                         </div>
@@ -45,6 +46,7 @@ function UserDash({user, setUser}) {
                         {
                             comp==1?<ManageCenter/>:
                             comp==2?<ManageSupplier/>:
+                            comp==3?<ViewIssues/>:
                             <></>
                             // issue==2?<Profile user={user} setUser={setUser}/>:
                             // <RaiseIssue/>

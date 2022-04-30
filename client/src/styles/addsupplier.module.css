@@ -10,7 +10,7 @@
     background-color: rgb(246,246,246);
 }
 
-.box {
+.box{
     background-color: white;
     display: flex;
     /* justify-content: center; */
@@ -18,6 +18,17 @@
     border: 10px solid white;
     border-radius: 0.7em;
     width:30vw;
+    margin-left: 2em;
+}
+
+.box010{
+    background-color: white;
+    display: flex;
+    /* justify-content: center; */
+    height:65vh;
+    border: 10px solid white;
+    border-radius: 0.7em;
+    width:40vw;
     margin-left: 2em;
 }
 .title a{
@@ -183,28 +194,37 @@
     margin-left: 1em;
 }
 
-.radiolabel{
+.radiolabel,.radiolabel1{
     font-size: 1.2em;
     color: rgb(1,126,126);
     /* font-weight: bold; */
     margin-left: 0.3em;
 }
+.radiolabel1{
+    min-width: fit-content;
+}
+
 
 .optt{
     margin-top: 1em;
     position: relative;
     bottom: 0.3em;
 }
-.radioRow{
+.radioRow,.radioRow111{
     display: flex;
     align-items: center;
     margin-top: 1.2em;
     margin-bottom: 1.7em;
     /* justify-content: space-between; */
 }
+.radioRow111{
+    flex-direction: column;
+}
 
 .op{
     margin-right: 2em;
     position: relative;
     left: 3vw;
+    display: flex;
+    align-items: center;
 }

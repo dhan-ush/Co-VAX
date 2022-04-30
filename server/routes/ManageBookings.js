@@ -99,7 +99,7 @@ router.post("/approve", async (req, res) => {
             async (err, result3) => {
               if (err) {
                 res.send({ err: err });
-              } else {
+              } else if (result3.length > 0) {
                 vaccine_name = result3[0].vaccine_name;
                 db.query(
                   "UPDATE citizen SET vaccination_status = vaccination_status+1 WHERE aadhar_number = ?;" +
@@ -137,6 +137,9 @@ router.post("/approve", async (req, res) => {
                     }
                   }
                 );
+              }
+              else{
+                res.send("no records");
               }
             }
           );

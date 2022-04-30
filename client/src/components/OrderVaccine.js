@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import st from "../styles/managebookings.module.css";
 import { useState } from "react";
 import axios from "axios";
+import OrderConfirm from "./OrderConfirm";
 
 function OrderVaccine(props) {
+  const [comp,setComp]=useState(0);
   const { center, setCenter } = props;
   const [data, setdata] = useState([]);
   //   let data = [
@@ -48,6 +50,8 @@ function OrderVaccine(props) {
 
   const [order, setOrder] = useState({
     cid: "",
+    sid:"",
+    sname:"",
     qty: "",
     date: "",
   });
@@ -58,10 +62,10 @@ function OrderVaccine(props) {
 
   const handleClick = async (w) => {
     console.log(order.qty);
-    setOrder({ ...order, cid: w.cid });
+    setOrder({ ...order, cid: w.cid,sid:w.supplier_id,sname:w.name });
     const regexx = /\d+/;
     var today = new Date();
-    var dmonth = today.getMonth();
+    var dmonth = today.getMonth()+1;
     var day = today.getDate();
     if (dmonth < 10) {
       dmonth = "0" + dmonth;
@@ -71,10 +75,16 @@ function OrderVaccine(props) {
     }
     var dateFormat = `${today.getFullYear()}-${dmonth}-${day}`;
     console.log(dateFormat);
-    if (!order.qty || order.qty > w.jabs || !regexx.test(order.qty))
-      alert("Please Enter Appropriate Value for Quantity");
+    if (!order.qty || order.qty > w.jabs_available || !regexx.test(order.qty))
+      {
+        alert("Please Enter Appropriate Value for Quantity");
+        return;
+      }
     else if (order.date < dateFormat)
-      alert("Please Enter a Future Delivery Date");
+      {
+        alert("Please Enter a Future Delivery Date");
+        return;
+      }
     else {
       //  POST request to the corresponding API to update the jabs info.
         axios
@@ -95,13 +105,14 @@ function OrderVaccine(props) {
             vaccine_name: center.vaccine_name
         })
         .then((response)=>{
-            console.log(response)
+            setComp(1);
         })
     }
   };
   return (
     <>
-      <div className={st.outer1}>
+    {comp==0?
+    <><div className={st.outer1}>
         <div className={st.title1}>Order Vaccine</div>
         <div className={st.tableDiv}>
           {data.length == 0 ? (
@@ -173,9 +184,11 @@ function OrderVaccine(props) {
               </tbody>
             </table>
           )}
-          {order.date}
         </div>
-      </div>
+      </div></>:
+      <OrderConfirm order={order} center={center}/>
+    }
+      
     </>
   );
 }

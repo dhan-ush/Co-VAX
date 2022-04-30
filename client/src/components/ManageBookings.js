@@ -15,34 +15,33 @@ function ManageBookings(props) {
     bookings: [],
   });
 
-  const getData = async () => {
-    // call the API to get the bookings for the vaccination center
-  };
-
-  useEffect(() => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios
       .post("http://localhost:3001/ManageBookings/display", {
         center_id: center.center_id,
-        dose_number: 1,
+        dose_number: dose
       })
       .then((response) => {
         console.log(response);
         setData({ ...data, bookings: response.data });
       });
-  }, []);
+  };
 
   const handleTick = (id) => {
     // console.log(id);
     // console.log(data.bookings[id].aadhar_number);
     // console.log(center.center_id,);
-    
-    axios.post("http://localhost:3001/ManageBookings/approve", {
-      aadhar_number: data.bookings[id].aadhar_number,
-      center_id: center.center_id,
-      dose_number: 1,
-    }).then((response) => {
-      console.log(response);
-    });
+
+    axios
+      .post("http://localhost:3001/ManageBookings/approve", {
+        aadhar_number: data.bookings[id].aadhar_number,
+        center_id: center.center_id,
+        dose_number: dose
+      })
+      .then((response) => {
+        console.log(response);
+      });
     var done_user = data.bookings.splice(id, 1);
     var x = data.bookings;
     x.filter((o, i) => id !== i);
@@ -52,13 +51,15 @@ function ManageBookings(props) {
   };
 
   const handleCross = (id) => {
-    axios.post("http://localhost:3001/ManageBookings/reject", {
-      aadhar_number: data.bookings[id].aadhar_number,
-      center_id: center.center_id,
-      dose_number: 1,
-    }).then((response) => {
-      console.log(response);
-    });
+    axios
+      .post("http://localhost:3001/ManageBookings/reject", {
+        aadhar_number: data.bookings[id].aadhar_number,
+        center_id: center.center_id,
+        dose_number: dose,
+      })
+      .then((response) => {
+        console.log(response);
+      });
     var removed_user = data.bookings.splice(id, 1);
     var x = data.bookings;
     x.filter((o, i) => id !== i);
@@ -82,7 +83,47 @@ function ManageBookings(props) {
             <div className={st.data}>{data.bookings.length}</div>
           </div>
         </div>
-        <div>
+        <div className={st.radioRow}>
+          <div className={st.radiotitlee}>Select Dose :</div>
+          <div className={st.op}>
+            <input
+              selected
+              className={st.rOption}
+              onClick={(e) => setDose(1)}
+              type="radio"
+              id="dose1"
+              name="dose"
+              value="dose1"
+            />
+            <label className={st.radiolabel} for="dose1">
+              Dose 1
+            </label>
+            <br></br>
+          </div>
+          <div className={st.op}>
+            <input
+              className={st.rOption}
+              onClick={(e) => setDose(2)}
+              type="radio"
+              id="dose2"
+              name="dose"
+              value="dose2"
+            />
+            <label className={st.radiolabel} for="dose2">
+              Dose 2
+            </label>
+            <br></br>
+          </div>
+          <button
+            className={st.submit1}
+            onClick={(e) => {
+              handleSubmit(e);
+            }}
+          >
+            Update
+          </button>
+        </div>
+        <div className={st.outertablediv}>
           <div className={st.tableDiv}>
             {data.bookings.length == 0 ? (
               <div>No Bookings Available</div>

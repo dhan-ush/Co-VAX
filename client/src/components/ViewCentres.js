@@ -1,11 +1,11 @@
 import React from "react";
 import st from "../styles/viewcentres.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Moment from "moment";
 
 function ViewCentres(props) {
-  const [vaccine, setVaccine] = useState("Covaxin");
+  const [vaccine, setVaccine] = useState("");
   const user = props.user;
   const setUser = props.setUser;
   const comp = props.comp;
@@ -15,6 +15,16 @@ function ViewCentres(props) {
     pincode: "",
     vaccine_name: "covaxin",
   });
+
+  useEffect(() => {
+    if(user.vaccination_status>=2){
+      axios.post("http://localhost:3001/GetVaccineDose1",{aadhar_number:user.aadhar}).then((response)=>{
+        setVaccine(response.data[0].dose1_vaccine_name);
+        setSearch({...search,vaccine_name:response.data[0].dose1_vaccine_name});
+      });
+    }
+  }, [])
+  
 
   const [selection, setSelection] = useState({
     center_id: "",
@@ -175,6 +185,7 @@ function ViewCentres(props) {
                 value={search.pincode}
                 onChange={(e) => {
                   setSearch({ ...search, pincode: e.target.value });
+                  console.log(search);
                 }}
               ></input>
             </div>
@@ -196,11 +207,7 @@ function ViewCentres(props) {
                 </>
               ) : (
                 <>
-                  <select
-                    onChange={(e) => {
-                      setSearch({ ...search, vaccine_name: e.target.value });
-                    }}
-                  >
+                  <select style={{textTransform:"capitalize"}}>
                     <option value={vaccine}>{vaccine}</option>
                   </select>
                 </>

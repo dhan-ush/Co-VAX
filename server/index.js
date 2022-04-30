@@ -24,15 +24,12 @@ const CenterList = require("./routes/CenterList");
 const AddSupplier = require("./routes/AddSupplier")
 const RemoveSupplier = require("./routes/RemoveSupplier")
 const AdminSupplierList = require("./routes/AdminSupplierList")
-<<<<<<< HEAD
 const UpdateSupplyTable =  require("./routes/UpdateSupplyTable")
 const ConvertToHash =  require("./routes/ConvertToHash")
 const GetVaccineDose1 =  require("./routes/GetVaccineDose1")
 
-=======
 const AddStaff = require("./routes/AddStaff")
 const RemoveStaff = require("./routes/RemoveStaff")
->>>>>>> 33329c2843a45f3644ff9b52f51040011bf7d091
 //
 
 //routes

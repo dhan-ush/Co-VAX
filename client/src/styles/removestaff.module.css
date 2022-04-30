@@ -61,7 +61,7 @@
 
 .title1{
   color: rgb(1,126,126);
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bolder;
   /* margin: none; */
   /* margin-bottom: 2em; */
@@ -152,14 +152,15 @@
   font-size: 1em;
 }
 
-.theading:nth-child(1){
+/* .theading:nth-child(1){
   width: 8vw;
-}
-.theading1:nth-child(1){
+} */
+.theading1:nth-child(5){
   width: 10vw;
 }
-.theading1:nth-child(7){
-  width: 12vw;
+.theading1:nth-child(4){
+  width: 11vw;
+  font-size: 0.9em;
 }
 .tableHead{
   background-color: rgb(189, 189, 189);

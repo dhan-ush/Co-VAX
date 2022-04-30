@@ -18,6 +18,9 @@
     align-items: center;
     /* padding: 1em 2em; */
 }
+.tableDiv{
+    overflow-y: scroll;
+}
 .box{
     height:75vh;
     background-color: white;

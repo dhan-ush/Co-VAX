@@ -8,6 +8,8 @@
 .out{
     height: 88vh;
     background-color: rgb(246,246,246);
+    display: flex;
+    flex-direction: column;
 }
 .outer{
     height: 88vh;
@@ -100,7 +102,7 @@
     color: rgb(1,126,126);
     font-size: 1.5em;
 }
-.submit{
+.submit,.submit1{
     background-color: rgb(1,126,126);
     color: white;
     border:0px;
@@ -111,7 +113,46 @@
     min-width: fit-content;
 
 }
+.submit1{
+    height: 6vh;
+    margin-left: 2vw;
+}
 
+.radiolabel{
+    font-size: 1.2em;
+    color: rgb(1,126,126);
+    /* font-weight: bold; */
+    margin-left: 0.3em;
+}
+
+.optt{
+    margin-top: 1em;
+    position: relative;
+    bottom: 0.3em;
+}
+.radioRow{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    justify-content: space-around;
+}
+.radiotitlee{
+    font-size: 1.4em;
+    color: black;
+    position: relative;
+    left: 1vw;
+}
+.op{
+    margin-right: 2em;
+    position: relative;
+    left: 3vw;
+}
+
+.submit1{
+    background-color: rgb(42, 139, 152);
+}
 .enabled {
     background-color: rgb(1,126,126);
     color: white;
@@ -132,10 +173,14 @@
     min-width: fit-content;
     background-color: grey;
 }
-
+.outertablediv{
+    align-self: center;
+}
 .tableDiv{
     margin: 2em 4em;
     overflow-y: scroll;
+    width: fit-content;
+    align-self: center;
     
 }
 .theading1:nth-child(2n){
@@ -205,7 +250,11 @@
     background-color: transparent;
     /* margin-bottom: 2em; */
 }
-
+.noBook{
+    font-size: 1.6em;
+    color: rgb(42, 139, 152);
+    /* overflow:-moz-hidden-unscrollable; */
+}
 .available:focus{
     background-color: rgb(1,126,126);
     color: white;

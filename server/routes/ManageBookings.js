@@ -18,7 +18,7 @@ db.connect((err) => {
   console.log("connected as id: " + db.threadId);
 });
 
-router.post("/", async (req, res) => {
+router.post("/display", async (req, res) => {
   const { center_id, dose_number } = req.body;
   db.query(
     "SELECT b.aadhar_number,name,primary_number FROM book_slot? b, citizen c WHERE center_id = ? AND b.aadhar_number = c.aadhar_number",

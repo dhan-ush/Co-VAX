@@ -29,9 +29,9 @@ function ManageCenter() {
             <div className={st.outer}>
                 {comp == 0 ?
                     <>
-                        <div className={st.a}>
+                        <div className={st.outer}>
 
-                        </div>
+                        
                         <div className={st.box}>
                             <div className={st.box_left}>
                                 <button onClick={() => setComp(1)}
@@ -42,6 +42,7 @@ function ManageCenter() {
                                     className={st.submit}>Remove Center</button>
 
                             </div>
+                        </div>
                         </div>
                     </>
                     :

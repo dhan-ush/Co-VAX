@@ -10,7 +10,7 @@ CoVAX is a web application similar to the CoWIN portal used by the Goverment of 
 * Download Certificate option is also made available to the users.
 * The user can raise a complaint, if he/she faces any issue post vaccination.
 * The Vaccination centers can manage bookings in real time. Once the user has been vaccinated the center approves the same and the record is updated.
-* The Vaccination Center can order vaccines from the suppkier if it falls short of jabs.
+* The Vaccination Center can order vaccines from the supplier if it falls short of jabs.
 * The admin is responsible for addition/deletion of vaccination centers if required and gets real time data of all the vaccination centers.
 
 # Built using
